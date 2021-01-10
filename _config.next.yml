@@ -1,0 +1,18 @@
+# theme
+scheme: Pisces
+# scheme: Gemini
+
+# To generate custom favicons, you can visit Favicon Generator.
+# https://realfavicongenerator.net/
+favicon:
+  small: /favicons/favicon-16x16.png
+  medium: /favicons/favicon-32x32.png
+  apple_touch_icon: /favicons/apple-touch-icon.png
+  safari_pinned_tab: /favicons/safari-pinned-tab.svg
+  android_manifest: /favicons/site.webmanifest
+
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language: deed.zh
