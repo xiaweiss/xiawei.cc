@@ -7,7 +7,7 @@ title: Atom Packages（插件）推荐
 updated: 2018-08-01
 ---
 
-![](https://xiaweiss.com/images/20180103.jpg)
+![](https://xiawei.cc/images/20180103.jpg)
 
 > 自从看了李笑来的[那篇博文][1]后，尝试使用 atom 编辑器后，喜欢上了清爽的界面和可定制化的功能
 > webstorm 很强大，但启动速度比较慢，对 markdown 的支持界面不是很友好

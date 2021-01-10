@@ -7,7 +7,7 @@ title: php 学习笔记
 updated: 2018-02-07
 ---
 
-![](https://xiaweiss.com/images/20180124.jpg)
+![](https://xiawei.cc/images/20180124.jpg)
 
 > 一直想做点自己的小东西，所以开始学习后端知识了
 > 目前是一些基础的语法速学记录，还在更新中，以后有时间会整理归纳

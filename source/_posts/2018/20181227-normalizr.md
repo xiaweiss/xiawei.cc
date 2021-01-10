@@ -7,7 +7,7 @@ title: Normalizr 使用教程
 updated: 2018-12-27
 ---
 
-![20181227](https://xiaweiss.com/images/20181227.jpg)
+![20181227](https://xiawei.cc/images/20181227.jpg)
 
 > Normalizr 前端用于格式化数据结构的 Javascript 工具库。
 > 官方文档写的不是很容易理解，这里按我的思路介绍一下，方便快速上手

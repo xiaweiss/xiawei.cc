@@ -7,7 +7,7 @@ title: Hexo 博客搭建、进阶配置指南
 updated: 2018-12-03
 ---
 
-![](https://xiaweiss.com/images/20171008.jpg)
+![](https://xiawei.cc/images/20171008.jpg)
 
 > 作为一个 web 程序员，当然也想有自己的自留地
 > 于是就研究起了搭建博客，来记录自己的成长
@@ -22,13 +22,13 @@ updated: 2018-12-03
 ## 1. 准备工作
 ### 1.1 安装 chrome 浏览器，百度下载即可
 
-![](https://xiaweiss.com/images/20171008-download-chrome.png)
+![](https://xiawei.cc/images/20171008-download-chrome.png)
 
 ### 1.2 注册一个 [Github][2] 账号
 
 如果看不懂英语，可以点这个小按钮来全文翻译（失败的话可以多试几次，或使用其他翻译软件）
 
-![](https://xiaweiss.com/images/20171008-chrome-translate.png)
+![](https://xiawei.cc/images/20171008-chrome-translate.png)
 
 ### 1.3 创建一个Repo
 
@@ -49,7 +49,7 @@ windows 下载第一行的 msi 类型即可，位数按系统的位数即可，�
 安装好之后，运行其他系统运行 terminal 命令行工具
 windows 系统，在桌面或任意文件夹内，右击，运行 git bush here
 
-![](https://xiaweiss.com/images/20171008-git-bush-here.png)
+![](https://xiawei.cc/images/20171008-git-bush-here.png)
 
 (下文的命令行中的命令，每行代表一个命令，行末必须按回车键Enter)
 
@@ -134,27 +134,27 @@ git config --global user.email "your_email@example.com"
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com" (替换为你的GitHub电子邮件地址)
 ```
 接着会出现几次提示，如下图箭头处，直接按回车Enter键即可
-![](https://xiaweiss.com/images/20171008-create-ssh-key.png)
+![](https://xiawei.cc/images/20171008-create-ssh-key.png)
 
 ### 3.3 将ssh-key添加到 Github
 打开Github，点击右上角的头像，再点设置
 
-![](https://xiaweiss.com/images/20171008-github-setting.png)
+![](https://xiawei.cc/images/20171008-github-setting.png)
 
 命令行中继续输入
 ```
 cat ~/.ssh/id_rsa.pub
 ```
 然后可以看到一堆编码，见下图，把红框里的部分复制了。
-![](https://xiaweiss.com/images/20171008-copy-ssh-key.png)
+![](https://xiawei.cc/images/20171008-copy-ssh-key.png)
 
 在用户设置侧栏中，单击 SSH and GPG Keys(SSH和GPG密钥)，然后单击右上角绿色的 New SSH key(新的SSH密钥)
 
 然后可以看到这个界面，Title标题随意填。key密钥里，把刚刚复制好的编码粘贴进去，然后点下面 Add SSH key
-![](https://xiaweiss.com/images/20171008-github-paste-ssh-keys.png)
+![](https://xiawei.cc/images/20171008-github-paste-ssh-keys.png)
 
 出现这个界面，表示成功了
-![](https://xiaweiss.com/images/20171008-github-add-ssh-key-ok.png)
+![](https://xiawei.cc/images/20171008-github-add-ssh-key-ok.png)
 
 最后一步，命令行中输入，就可以发布到 Github 了
 ```
@@ -170,7 +170,7 @@ atom .
 ```
 即可启动编辑器，并且打开项目目录
 
-![](https://xiaweiss.com/images/20171008-atom-md-view.png)
+![](https://xiawei.cc/images/20171008-atom-md-view.png)
 
 使用 md 后缀的 markdown 格式，来写文章。语法请参考 [《献给写作者的 Markdown 新手指南》][6]
 
@@ -229,7 +229,7 @@ hexo s
 
 找到 yourname.github.io 文件夹右击，选择`坚果云`，选择`同步到个人空间`，即可
 
-![](https://xiaweiss.com/images/20171008-netstore.png)
+![](https://xiawei.cc/images/20171008-netstore.png)
 
 
 ### 5.2 Github 备份

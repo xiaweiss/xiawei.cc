@@ -523,6 +523,13 @@ hexo-generator-index@^2.0.0:
     hexo-pagination "1.0.0"
     timsort "^0.3.0"
 
+hexo-generator-searchdb@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.npm.taobao.org/hexo-generator-searchdb/download/hexo-generator-searchdb-1.3.3.tgz#48d585c9e2e232cd5f875e9b3bc5442e8525d86e"
+  integrity sha1-SNWFyeLiMs1fh16bO8VELoUl2G4=
+  dependencies:
+    nunjucks "^3.2.2"
+
 hexo-generator-tag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/hexo-generator-tag/-/hexo-generator-tag-1.0.0.tgz#54ec23de9409c75584ea81e36057a59031b022f1"
@@ -585,11 +592,6 @@ hexo-server@^2.0.0:
     morgan "^1.9.1"
     open "^7.0.0"
     serve-static "^1.14.1"
-
-hexo-theme-landscape@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz#87d1f4d613da9be5245dad0d4b80479eab70d386"
-  integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
 hexo-theme-next@^8.2.0:
   version "8.2.0"
@@ -878,7 +880,7 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-nunjucks@^3.2.1:
+nunjucks@^3.2.1, nunjucks@^3.2.2:
   version "3.2.2"
   resolved "https://registry.npmjs.org/nunjucks/-/nunjucks-3.2.2.tgz#45f915fef0f89fbab38c489dc85025f64859f466"
   integrity sha512-KUi85OoF2NMygwODAy28Lh9qHmq5hO3rBlbkYoC8v377h4l8Pt5qFjILl0LWpMbOrZ18CzfVVUvIHUIrtED3sA==

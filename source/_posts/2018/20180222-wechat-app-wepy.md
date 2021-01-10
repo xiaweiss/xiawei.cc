@@ -7,7 +7,7 @@ title: 微信小程序 wepy 框架
 updated: 2018-02-22
 ---
 
-![](https://xiaweiss.com/images/20180222.jpg)
+![](https://xiawei.cc/images/20180222.jpg)
 
 > 微信小程序踩坑记
 > 考虑到业务的复杂性需要 redux 状态管理，以及原有 vue 项目的可移植性，选用 wepy 来开发小程序

@@ -7,7 +7,7 @@ title: Swift 指南学习笔记
 updated: 2019-02-13
 ---
 
-![20181225](https://xiaweiss.com/images/20181225.jpg)
+![20181225](https://xiawei.cc/images/20181225.jpg)
 
 > 正在学习 Swift 中，简要的笔记~
 
@@ -161,7 +161,7 @@ let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
 ```
 
 ### 集合类型
-![CollectionTypes_intro_2x](https://xiaweiss.com/images/20181225-collection-types-intro.png)
+![CollectionTypes_intro_2x](https://xiawei.cc/images/20181225-collection-types-intro.png)
 数组 Array
 集合 Set
 字典 Dictionary
@@ -238,7 +238,7 @@ for value in num.sorted(by: >) {
 ```
 
 合集操作
-![setVennDiagram_2x-1](https://xiaweiss.com/images/20181225-set-venn-diagram.png)
+![setVennDiagram_2x-1](https://xiawei.cc/images/20181225-set-venn-diagram.png)
 intersection、symmetricDifference、union、subtracting
 
 ### 闭包

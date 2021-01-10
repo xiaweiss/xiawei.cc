@@ -8,7 +8,7 @@ subtitle: 夏味的博客
 description: 夏味的博客
 keywords: 夏味的博客
 author: 夏味
-language: en
+language: zh-CN # default en
 timezone: Asia/Shanghai
 
 # URL
@@ -97,6 +97,13 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

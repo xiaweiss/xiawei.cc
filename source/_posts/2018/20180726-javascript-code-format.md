@@ -7,7 +7,7 @@ title: JavaScript 代码格式化
 updated: 2018-07-27
 ---
 
-![20180726](https://xiaweiss.com/images/20180726.jpg)
+![20180726](https://xiawei.cc/images/20180726.jpg)
 
 > 每个人都可能有自己的代码风格和格式，但如果一个项目中的所有人都遵循同一风格的话，这个项目就能更顺利地进行。每个人未必能同意每一处格式规则，而且其中的不少规则需要一定时间的适应，但整个项目服从统一的编程风格是很重要的，只有这样才能让所有人轻松地阅读和理解代码。
 
@@ -112,16 +112,16 @@ Alt + Shift + Cmd + P
 
 打开设置，搜索 Prettier，然后复制 Prettier package 里的路径
 
-![20180726-pretter-path](https://xiaweiss.com/images/20180726-pretter-path.png)
+![20180726-pretter-path](https://xiawei.cc/images/20180726-pretter-path.png)
 
 清空搜索栏，打开设置里 Tools -> File Watchers
 点击右侧左下角的 ➕ 加号，选择 `<custom>` 新建自定义模板
 
-![20180726-filewatcher-new](https://xiaweiss.com/images/20180726-filewatcher-new.png)
+![20180726-filewatcher-new](https://xiawei.cc/images/20180726-filewatcher-new.png)
 
 然后可以看到（注意点击三角箭头，展开全部的选项）
 
-![20180726-filewatcher-config](https://xiaweiss.com/images/20180726-filewatcher-config.png)
+![20180726-filewatcher-config](https://xiawei.cc/images/20180726-filewatcher-config.png)
 
 按上图来配置，并且填入下面内容，注意取消勾选 Auto-save 选项
 最后点右下角 ok 结束配置
@@ -153,12 +153,12 @@ npm install eslint --save-dev
 2.打开编辑器配置，如下图，找到 ESLint 配置项，路径系统会自动检测到，只要勾选 Enable 即可
 （如果没有路径，需要重启编辑器，或手动指定 eslint 的 npm 包路径）
 
-![20180726-webstrom-eslint](https://xiaweiss.com/images/20180726-webstrom-eslint.png)
+![20180726-webstrom-eslint](https://xiawei.cc/images/20180726-webstrom-eslint.png)
 
 3.重启编辑器
 4.设置快捷键
 
-![20180726-webstorm-keymap](https://xiaweiss.com/images/20180726-webstorm-keymap.png)
+![20180726-webstorm-keymap](https://xiawei.cc/images/20180726-webstorm-keymap.png)
 建议设为 Ctrl + Alt + F
 
 设置保存时自动格式化：
@@ -193,13 +193,13 @@ npm install standard --save-dev
 设置 JS 代码风格为 standard（Webstorm 默认为 Google 风格），出处点[这里][5]
 设置的位置见下图，为 Editor -> Code Style -> JavaScript -> Warping and Braces -> Set from...
 -> Predefined Style -> JavaScript Standard Style
-![20180726-webstorm-codestyle](https://xiaweiss.com/images/20180726-webstorm-codestyle.jpg)
+![20180726-webstorm-codestyle](https://xiawei.cc/images/20180726-webstorm-codestyle.jpg)
 
 然后使用编辑器默认的格式化功能即可, Alt + Cmd + L
 
 开启代码检查(可选，不设置时不会提示格式错误)：
 打开上图配置 ESlint 的界面, 勾选 Enable，并且将 ESLint package 选为 standard 的 npm 路径即可
-![20180726-webstorm-standard](https://xiaweiss.com/images/20180726-webstorm-standard.png)
+![20180726-webstorm-standard](https://xiawei.cc/images/20180726-webstorm-standard.png)
 
 ### Prettier + ESLint 同时使用
 
@@ -236,11 +236,11 @@ WebStorm 会自动先运行 Pretter，再运行 ESLint 格式化代码
 安装插件 [ESLint][10]
 双击红色波浪线，会出现黄色小灯泡，点击灯泡，再点击 Fix，就可以完成格式化
 
-![20180726-vscode-eslint](https://xiaweiss.com/images/20180726-vscode-eslint.png)
+![20180726-vscode-eslint](https://xiawei.cc/images/20180726-vscode-eslint.png)
 
 或者 输入 Cmd + Shift+P(win: Ctrl+Shift+P) 调出命令面板，输入指令 fix
 
-![20180726-vscode-eslintfix](https://xiaweiss.com/images/20180726-vscode-eslintfix.png)
+![20180726-vscode-eslintfix](https://xiawei.cc/images/20180726-vscode-eslintfix.png)
 
 也可以添加自定义配置, 设置保存时自动格式化：
 
@@ -260,7 +260,7 @@ npm install standard --save-dev
 
 输入 Cmd + Shift+P(win: Ctrl+Shift+P) 调出命令面板，输入指令 fix
 选择 fix all auto-fixable problems 即可
-![20180726-vscode-standard](https://xiaweiss.com/images/20180726-vscode-standard.png)
+![20180726-vscode-standard](https://xiawei.cc/images/20180726-vscode-standard.png)
 
 建议添加自定义配置：
 
@@ -324,11 +324,11 @@ npm install standard --save-dev
 
 安装插件 [liner-eslint][6], 重启编辑器
  点击有问题的部分，再点击 fix 即可格式化
-![20180726-atom-eslint](https://xiaweiss.com/images/20180726-atom-eslint.png)
+![20180726-atom-eslint](https://xiawei.cc/images/20180726-atom-eslint.png)
 
 设置保存时自动格式化：
 在 linter-eslint 插件配置中，勾选
-![20180726-atom-eslint-autofix](https://xiaweiss.com/images/20180726-atom-eslint-autofix.png)
+![20180726-atom-eslint-autofix](https://xiawei.cc/images/20180726-atom-eslint-autofix.png)
 
 ### standard 标准格式化
 
@@ -350,7 +350,7 @@ npm install standard --save-dev
 按前文同时配置 Prettier + ESLint, 并且都开启保存时自动格式化即可
 
 或者只配置 Prettier，然后在 Prettier 设置里勾选
-![20180726-atom-pretter-eslint](https://xiaweiss.com/images/20180726-atom-pretter-eslint.png)
+![20180726-atom-pretter-eslint](https://xiawei.cc/images/20180726-atom-pretter-eslint.png)
 
 这时不需要安装 ESLint 格式化插件 [standard-formatter][8]
 如果不需要格式检查提示，也不用安装格式检查插件 [linter-js-standard][7]

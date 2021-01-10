@@ -7,7 +7,7 @@ title: 前端基础知识
 updated: 2018-01-01
 ---
 
-![](https://xiaweiss.com/images/20180222.jpg)
+![](https://xiawei.cc/images/20180222.jpg)
 
 <!-- more -->
 

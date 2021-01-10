@@ -7,7 +7,7 @@ title: React 简介
 updated: 2018-03-20
 ---
 
-![](https://xiaweiss.com/images/20171205.jpg)
+![](https://xiawei.cc/images/20171205.jpg)
 
 <!--more-->
 
