@@ -20,6 +20,26 @@ favicon:
   safari_pinned_tab: /favicons/safari-pinned-tab.svg
   android_manifest: /favicons/site.webmanifest
 
+# ---------------------------------------------------------------
+# Sidebar Settings Start
+# ---------------------------------------------------------------
+# sidebar:
+  # position: left
+  # display: post # Show sidebar only in posts which have index.
+  #display: always # Show sidebar in all pages.
+  # width: 240
+  # padding: 18
+  # offset: 12
+
+avatar:
+  url: /images/avatar.jpg
+  rounded: true
+
+social:
+  GitHub: https://github.com/xiaweiss || fab fa-github
+  E-Mail: mailto:xiaweiss@foxmail.com || fa fa-envelope
+  # Weibo: https://weibo.com/xiaweiss || fab fa-weibo
+
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
 # Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
@@ -35,49 +55,10 @@ menu:
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
-  Technology: /categories/技术 || fa fa-cubes
-  Read: /categories/读书 || fa fa-book
+  技术: /categories/技术 || fa fa-cubes
+  读书: /categories/读书 || fa fa-book
   #painting: /categories/绘画 || fa fa-paint-brush
   #essay: /categories/随笔 || fa fa-edit
-
-# ---------------------------------------------------------------
-# Sidebar Settings Start
-# ---------------------------------------------------------------
-sidebar:
-  position: right
-  display: post # Show sidebar only in posts which have index.
-  #display: always # Show sidebar in all pages.
-  # width: 240
-  # padding: 18
-  # offset: 12
-
-avatar:
-  url: /images/avatar.jpg
-  rounded: true
-
-social:
-  GitHub: https://github.com/xiaweiss || fab fa-github
-  E-Mail: mailto:xiaweiss@foxmail.com || fa fa-envelope
-  # Weibo: https://weibo.com/xiaweiss || fab fa-weibo
-
-toc:
-  number: false
-  # wrap: false
-
-
-# ---------------------------------------------------------------
-# Sidebar Settings End
-# ---------------------------------------------------------------
-
-footer:
-  since: 2017
-
-
-# Comment
-disqus:
-  enable: true
-  shortname: xiawei
-  count: true
 
 # Local search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
@@ -92,3 +73,51 @@ local_search:
   unescape: false
   # Preload the search data when the page loads.
   preload: false
+
+toc:
+  number: false
+  # wrap: false
+
+# ---------------------------------------------------------------
+# Sidebar Settings End
+# ---------------------------------------------------------------
+
+codeblock:
+  # Code Highlight theme
+  # All available themes: https://theme-next.js.org/highlight/
+  theme:
+    light: atom-one-light
+    dark: atom-one-dark
+
+tag_icon: true
+
+follow_me:
+  WeChat: /images/wechat.jpg || fab fa-weixin
+  RSS: /atom.xml || fa fa-rss
+
+post_edit:
+  enable: false
+  url: https://github.com/xiaweiss/xiawei.cc/edit/master/source/
+
+# Comment
+disqus:
+  enable: true
+  shortname: xiawei
+  count: true
+
+reading_progress:
+  enable: true
+  color: "#2ea9df"
+  height: 3px
+
+# Follow me on GitHub banner in right-top corner.
+github_banner:
+  enable: true
+  permalink: https://github.com/xiaweiss
+  title: Follow me on GitHub
+
+footer:
+  since: 2017
+  beian:
+    enable: true
+    icp: 京 ICP 备 17057895 号-2

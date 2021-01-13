@@ -22,8 +22,8 @@ pretty_urls:
   trailing_html: true # remove trailing '.html' from permalinks
 
 # Directory
-source_dir: source # TODO
-public_dir: public # TODO
+source_dir: source
+public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -46,19 +46,16 @@ filename_case: 0 # Transform filenames to 1 lower case; 2 upper case
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true # Display future posts?
+future: false # Display future posts?
 highlight:
   enable: true
-  line_number: true
   auto_detect: false
-  tab_replace: ''
+  line_number: true
+  tab_replace: '  '
   wrap: true
   hljs: false
 prismjs:
   enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
