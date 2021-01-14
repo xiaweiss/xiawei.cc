@@ -20,6 +20,8 @@ favicon:
   safari_pinned_tab: /favicons/safari-pinned-tab.svg
   android_manifest: /favicons/site.webmanifest
 
+android_chrome_color: #2ea9df
+
 # ---------------------------------------------------------------
 # Sidebar Settings Start
 # ---------------------------------------------------------------
@@ -38,7 +40,12 @@ avatar:
 social:
   GitHub: https://github.com/xiaweiss || fab fa-github
   E-Mail: mailto:xiaweiss@foxmail.com || fa fa-envelope
+  WeChat: /images/wechat.jpg || fab fa-weixin
+  RSS: /atom.xml || fa fa-rss
   # Weibo: https://weibo.com/xiaweiss || fab fa-weibo
+
+social_icons:
+  icons_only: true
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
@@ -55,8 +62,8 @@ menu:
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
-  技术: /categories/技术 || fa fa-cubes
-  读书: /categories/读书 || fa fa-book
+  tech: /categories/技术 || fa fa-cubes
+  read: /categories/读书 || fa fa-book
   #painting: /categories/绘画 || fa fa-paint-brush
   #essay: /categories/随笔 || fa fa-edit
 
@@ -91,9 +98,9 @@ codeblock:
 
 tag_icon: true
 
-follow_me:
-  WeChat: /images/wechat.jpg || fab fa-weixin
-  RSS: /atom.xml || fa fa-rss
+# follow_me:
+#   WeChat: /images/wechat.jpg || fab fa-weixin
+#   RSS: /atom.xml || fa fa-rss
 
 post_edit:
   enable: false
@@ -110,14 +117,35 @@ reading_progress:
   color: "#2ea9df"
   height: 3px
 
-# Follow me on GitHub banner in right-top corner.
-github_banner:
-  enable: true
-  permalink: https://github.com/xiaweiss
-  title: Follow me on GitHub
-
 footer:
   since: 2017
+  icon:
+    animated: true
   beian:
     enable: true
     icp: 京 ICP 备 17057895 号-2
+
+custom_file_path:
+  head: source/_data/head.njk
+  # style: source/_data/styles.styl
+  # variable: source/_data/variables.styl
+  bodyEnd: source/_data/body-end.njk
+
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+related_posts:
+  enable: true
+  title: # Custom header, leave empty to use the default one
+  display_in_home: false
+  params:
+    maxCount: 5
+    #PPMixingRate: 0.0
+    #isDate: false
+    #isImage: false
+    #isExcerpt: false
+
+# A JavaScript library for zooming images like Medium.
+mediumzoom: true
+
+# Vanilla JavaScript plugin for lazyloading images.
+lazyload: true
