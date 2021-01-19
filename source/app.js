@@ -23,7 +23,7 @@ app.use(koaStatic(
 
 if (prod) {
   // Force HTTPS on page
-  app.use(enforceHttps())
+  app.use(enforceHttps({port: 443}))
   // SSL options
   const options = {
     key: fs.readFileSync('/home/xiawei/xiawei.cc.key'),
