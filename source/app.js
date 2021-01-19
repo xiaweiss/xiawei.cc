@@ -18,7 +18,7 @@ const staticPath = '.'
 
 app.use(koaStatic(
   path.join(__dirname, staticPath),
-  { maxage: 1 * 24 * 60 * 60 * 1000 } // 1 day
+  // { maxage: 1 * 24 * 60 * 60 * 1000 } // 1 day
 ))
 
 if (prod) {
