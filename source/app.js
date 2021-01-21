@@ -8,34 +8,26 @@ const koaCors = require('@koa/cors');
 const koaStatic = require('koa-static')
 const sslify = require('koa-sslify').default
 
+const app = new Koa()
+
 // Force HTTPS on page
 app.use(sslify())
-
-const prod = true
-
-const app = new Koa()
+// Allow Cors
 app.use(koaCors())
-
-// 静态资源目录对于相对入口文件index.js的路径
-const staticPath = '.'
-
+// Static
 app.use(koaStatic(
-  path.join(__dirname, staticPath),
+  path.join(__dirname, '.'), // 静态资源目录对于相对入口文件index.js的路径
   // { maxage: 1 * 24 * 60 * 60 * 1000 } // 1 day
 ))
 
-if (prod) {
-  // SSL options
-  const options = {
-    key: fs.readFileSync('/home/xiawei/xiawei.cc.key'),
-    cert: fs.readFileSync('/home/xiawei/xiawei.cc.pem')
-  }
-  // Start the server
-  http.createServer(app.callback()).listen(80)
-  https.createServer(options, app.callback()).listen(443)
-} else {
-  http.createServer(app.callback()).listen(9000)
+// SSL options
+const options = {
+  key: fs.readFileSync('/home/xiawei/xiawei.cc.key'),
+  cert: fs.readFileSync('/home/xiawei/xiawei.cc.pem')
 }
+// Start the server
+http.createServer(app.callback()).listen(80)
+https.createServer(options, app.callback()).listen(443)
 
 // 允许 node 监听小于 1024 的端口
 // sudo setcap cap_net_bind_service=+ep /home/xiawei/.nvm/versions/node/v12.16.1/bin/node
