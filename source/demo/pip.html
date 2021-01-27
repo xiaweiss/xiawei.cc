@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <video id="video" height="400" src="https://player.alicdn.com/video/editor.mp4" controls></video>
+  <div>
+    <button id="pipButton">togglePipButton</button>
+    <div id="pipStatus"></div>
+  </div>
+
+
+  <script>
+    // 如果不支持画中画，将按钮隐藏
+    pipButton.hidden = !document.pictureInPictureEnabled;
+
+    // 如果没有元素在画中画模式，我们将视频元素请求进入画中画模式。
+    // 若是已经是在画中画模式中，我们将请求退出画中画模式。
+    pipButton.addEventListener("click", () => {
+      if (!document.pictureInPictureElement) {
+        video.requestPictureInPicture().catch(error => {
+          // 视频无法进入画中画模式
+          console.log('Video failed to enter Picture-in-Picture mode.')
+        })
+      } else {
+        document.exitPictureInPicture().catch(error => {
+           // 视频无法进离开画中画模式
+          console.log('Video failed to leave Picture-in-Picture mode.')
+        })
+      }
+    });
+
+    video.addEventListener("enterpictureinpicture", (event) => {
+      // 视频已进入画中画模式
+      console.log("Video entered Picture-in-Picture mode.")
+      const pipWindow = event.pictureInPictureWindow;
+      updateVideoSize(pipWindow.width, pipWindow.height);
+      pipWindow.addEventListener("resize", onPipWindowResize);
+    });
+
+    video.addEventListener("leavepictureinpicture", (event) => {
+      // 视频已离开画中画模式
+      console.log("Video left Picture-in-Picture mode.")
+      const pipWindow = event.pictureInPictureWindow;
+      pipWindow.removeEventListener("resize", onPipWindowResize);
+    });
+
+    function onPipWindowResize(event) {
+      // Picture-in-Picture window has been resized.
+      console.log('Picture-in-Picture window has been resized.')
+      const { width, height } = event.target;
+      updateVideoSize(width, height);
+    }
+
+    function updateVideoSize(width, height) {
+      console.log('Update video size based on pip window width and height.')
+      // TODO: Update video size based on pip window width and height.
+    }
+  </script>
+</body>
+</html>
