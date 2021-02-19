@@ -127,8 +127,8 @@ footer:
 
 custom_file_path:
   head: source/_data/head.njk
-  # style: source/_data/styles.styl
-  # variable: source/_data/variables.styl
+  style: source/_data/styles.styl
+  variable: source/_data/variables.styl
   bodyEnd: source/_data/body-end.njk
 
 # Related popular posts

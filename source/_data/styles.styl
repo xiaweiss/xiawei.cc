@@ -1,14 +1,29 @@
-// // Custom styles, created by xiaweiss
-// // 修改背景图片
-// body
-//   background: url(/images/background.webp)
-//   background-size: cover
-//   background-attachment: fixed
-//   background-color: $ruri
+// Custom styles, created by xiaweiss
+// 修改背景图片
+body
+  background: url(/images/background.webp)
+  background-size: cover
+  background-attachment: fixed
+  background-color: $ruri
 
-// // ios 移动端 对webp兼容性不好，改用 jpg 图
-// .ios .container
-//   background-image: url(/images/background.jpg)
+// ios 移动端 对webp兼容性不好，改用 jpg 图
+.ios .container
+  background-image: url(/images/background.jpg)
+
+.headband,
+.site-brand-container,
+blockquote
+  background $tsuyukusa
+
+.site-subtitle,
+.footer,
+.footer a
+  border-color white
+  color white
+
+.back-to-top:hover
+  color white
+
 
 // // 修改 markdown 引用标签的左边框颜色
 // blockquote

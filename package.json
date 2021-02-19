@@ -6,7 +6,7 @@
     "dev": "hexo clean && hexo server",
     "build": "hexo clean && hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo clean && hexo deploy  && hexo clean",
+    "deploy": "hexo clean && hexo deploy && hexo clean",
     "server": "hexo server",
     "removeHM": "find source -name '*.md' | xargs sed -f removeHM.sed -i '.bak' && find source -name '*.bak' | xargs rm"
   },
