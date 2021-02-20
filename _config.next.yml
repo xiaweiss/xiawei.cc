@@ -1,15 +1,32 @@
-# theme
-scheme: Pisces
-# scheme: Gemini
+# ---------------------------------------------------------------
+# Theme Core Configuration Settings
+# See: https://theme-next.js.org/docs/theme-settings/
+# ---------------------------------------------------------------
+
+# Allow to cache content generation.
+cache:
+  enable: true
 
 # Remove unnecessary files after hexo generate.
 minify: true
 
-darkmode: true
+# Define custom file paths.
+# Create your custom files in site directory `source/_data` and uncomment needed files below.
+custom_file_path:
+  head: source/_data/head.njk
+  style: source/_data/styles.styl
+  variable: source/_data/variables.styl
+  bodyEnd: source/_data/body-end.njk
 
-# Easily enable fast Ajax navigation on your website.
-# For more information: https://github.com/next-theme/pjax
-pjax: true
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+scheme: Pisces
+darkmode: false
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
 
 # To generate custom favicons, you can visit Favicon Generator.
 # https://realfavicongenerator.net/
@@ -20,19 +37,33 @@ favicon:
   safari_pinned_tab: /favicons/safari-pinned-tab.svg
   android_manifest: /favicons/site.webmanifest
 
-android_chrome_color: #2ea9df
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
+# Usage: `Key: /link/ || icon`
+# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
+# Value before `||` delimeter is the target link.
+# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+menu:
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
+  #archives: /archives/ || fa fa-archive
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+  tech: /categories/技术 || fa fa-cubes
+  read: /categories/读书 || fa fa-book
+  #painting: /categories/绘画 || fa fa-paint-brush
+  #essay: /categories/随笔 || fa fa-edit
 
 # ---------------------------------------------------------------
-# Sidebar Settings Start
+# Sidebar Settings
+# See: https://theme-next.js.org/docs/theme-settings/sidebar
 # ---------------------------------------------------------------
-# sidebar:
-  # position: left
-  # display: post # Show sidebar only in posts which have index.
-  #display: always # Show sidebar in all pages.
-  # width: 240
-  # padding: 18
-  # offset: 12
-
 avatar:
   url: /images/avatar.jpg
   rounded: true
@@ -47,25 +78,94 @@ social:
 social_icons:
   icons_only: true
 
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
-# Usage: `Key: /link/ || icon`
-# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
-menu:
-  home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  # archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+toc:
+  number: false
 
-  tech: /categories/技术 || fa fa-cubes
-  read: /categories/读书 || fa fa-book
-  #painting: /categories/绘画 || fa fa-paint-brush
-  #essay: /categories/随笔 || fa fa-edit
+# ---------------------------------------------------------------
+# Footer Settings
+# See: https://theme-next.js.org/docs/theme-settings/footer
+# ---------------------------------------------------------------
+footer:
+  since: 2017
+  icon:
+    animated: true
+  beian:
+    enable: true
+    icp: 京 ICP 备 17057895 号-2
+
+# ---------------------------------------------------------------
+# Post Settings
+# See: https://theme-next.js.org/docs/theme-settings/posts
+# ---------------------------------------------------------------
+post_meta:
+  created_at: false
+
+tag_icon: true
+
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+related_posts:
+  enable: true
+
+# Post edit
+# Easily browse and edit blog source code online.
+post_edit:
+  enable: false
+  url: https://github.com/xiaweiss/xiawei.cc/edit/master/source/
+
+# ---------------------------------------------------------------
+# Misc Theme Settings
+# See: https://theme-next.js.org/docs/theme-settings/miscellaneous
+# ---------------------------------------------------------------
+
+# Preconnect CDN for fonts and plugins.
+# For more information: https://www.w3.org/TR/resource-hints/#preconnect
+preconnect: true
+
+# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
+android_chrome_color: #2ea9df
+
+
+codeblock:
+  # Code Highlight theme
+  # All available themes: https://theme-next.js.org/highlight/
+  theme:
+    light: atom-one-light
+    dark: atom-one-dark
+  copy_button:
+    enable: true
+
+# Reading progress bar
+reading_progress:
+  enable: true
+  color: "#2ea9df"
+
+# ---------------------------------------------------------------
+# SEO Settings
+# See: https://theme-next.js.org/docs/theme-settings/seo
+# ---------------------------------------------------------------
+index_with_subtitle: true
+
+# Google Webmaster tools verification.
+# See: https://developers.google.com/search
+
+# Baidu Webmaster tools verification.
+# See: https://ziyuan.baidu.com/site
+baidu_site_verification: 'code-FzNCoWOKzS'
+
+# ---------------------------------------------------------------
+# Third Party Plugins & Services Settings
+# See: https://theme-next.js.org/docs/third-party-services/
+# More plugins: https://github.com/next-theme/awesome-next
+# You may need to install the corresponding dependency packages
+# ---------------------------------------------------------------
+
+# Easily enable fast Ajax navigation on your website.
+# For more information: https://github.com/next-theme/pjax
+pjax: true
+
+# TODO
+
 
 # Local search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
@@ -81,30 +181,8 @@ local_search:
   # Preload the search data when the page loads.
   preload: false
 
-toc:
-  number: false
-  # wrap: false
 
-# ---------------------------------------------------------------
-# Sidebar Settings End
-# ---------------------------------------------------------------
 
-codeblock:
-  # Code Highlight theme
-  # All available themes: https://theme-next.js.org/highlight/
-  theme:
-    light: atom-one-light
-    dark: atom-one-dark
-
-tag_icon: true
-
-# follow_me:
-#   WeChat: /images/wechat.jpg || fab fa-weixin
-#   RSS: /atom.xml || fa fa-rss
-
-post_edit:
-  enable: false
-  url: https://github.com/xiaweiss/xiawei.cc/edit/master/source/
 
 # Comment
 disqus:
@@ -112,37 +190,11 @@ disqus:
   shortname: xiawei
   count: true
 
-reading_progress:
-  enable: true
-  color: "#2ea9df"
-  height: 3px
 
-footer:
-  since: 2017
-  icon:
-    animated: true
-  beian:
-    enable: true
-    icp: 京 ICP 备 17057895 号-2
 
-custom_file_path:
-  head: source/_data/head.njk
-  style: source/_data/styles.styl
-  variable: source/_data/variables.styl
-  bodyEnd: source/_data/body-end.njk
 
-# Related popular posts
-# Dependencies: https://github.com/tea3/hexo-related-popular-posts
-related_posts:
-  enable: true
-  title: # Custom header, leave empty to use the default one
-  display_in_home: false
-  params:
-    maxCount: 5
-    #PPMixingRate: 0.0
-    #isDate: false
-    #isImage: false
-    #isExcerpt: false
+
+
 
 # A JavaScript library for zooming images like Medium.
 mediumzoom: true
