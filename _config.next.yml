@@ -176,7 +176,7 @@ lazyload: true
 disqus:
   enable: true
   shortname: xiawei
-  count: true
+  count: false
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
