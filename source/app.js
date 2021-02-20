@@ -17,7 +17,7 @@ app.use(koaCors())
 // Static
 app.use(koaStatic(
   path.join(__dirname, '.'), // 静态资源目录对于相对入口文件index.js的路径
-  // { maxage: 1 * 24 * 60 * 60 * 1000 } // 1 day
+  { maxage: 7 * 24 * 60 * 60 * 1000 } // 7 day
 ))
 
 // SSL options
