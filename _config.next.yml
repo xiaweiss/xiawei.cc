@@ -148,6 +148,7 @@ index_with_subtitle: true
 
 # Google Webmaster tools verification.
 # See: https://developers.google.com/search
+google_site_verification: '9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4'
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
@@ -164,8 +165,36 @@ baidu_site_verification: 'code-FzNCoWOKzS'
 # For more information: https://github.com/next-theme/pjax
 pjax: true
 
+# Vanilla JavaScript plugin for lazyloading images.
+# For more information: https://apoorv.pro/lozad.js/demo/
+lazyload: true
+
+# ---------------------------------------------------------------
+# Comments Settings
+# See: https://theme-next.js.org/docs/third-party-services/comments
+# ---------------------------------------------------------------
+disqus:
+  enable: true
+  shortname: xiawei
+  count: true
+
+# ---------------------------------------------------------------
+# Statistics and Analytics
+# See: https://theme-next.js.org/docs/third-party-services/statistics-and-analytics
+# ---------------------------------------------------------------
+
 # TODO
 
+# Show Views / Visitors of the website / page with busuanzi.
+# For more information: http://ibruce.info/2015/04/04/busuanzi/
+busuanzi_count:
+  enable: true
+
+
+# ---------------------------------------------------------------
+# Search Services
+# See: https://theme-next.js.org/docs/third-party-services/search-services
+# ---------------------------------------------------------------
 
 # Local search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
@@ -180,24 +209,3 @@ local_search:
   unescape: false
   # Preload the search data when the page loads.
   preload: false
-
-
-
-
-# Comment
-disqus:
-  enable: true
-  shortname: xiawei
-  count: true
-
-
-
-
-
-
-
-# A JavaScript library for zooming images like Medium.
-mediumzoom: true
-
-# Vanilla JavaScript plugin for lazyloading images.
-lazyload: true
