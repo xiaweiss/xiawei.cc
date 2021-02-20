@@ -1,33 +1,92 @@
 // Custom styles, created by xiaweiss
 // 修改背景图片
-body
-  background: url(/images/background.webp)
-  background-size: cover
-  background-attachment: fixed
-  background-color: $ruri
+body {
+  background: no-repeat $sora url(/images/background.webp) center bottom / cover;
+  background-attachment: fixed;
+}
+
 
 // ios 移动端 对webp兼容性不好，改用 jpg 图
-.ios .container
-  background-image: url(/images/background.jpg)
+.ios .container {
+  background-image: url(/images/background.jpg);
+}
 
+// 上一篇、下一篇图标居中
+.post-nav-item .fa {
+  transform: translateY(-1px);
+}
+
+// 顶部条、侧边栏顶部背景色
 .headband,
-.site-brand-container,
-blockquote
-  background $tsuyukusa
+.site-brand-container {
+  background: $tsuyukusa;
+}
 
+// markdown 引用标签的左边框颜色
+blockquote {
+  border-left-color: $tsuyukusa;
+}
+
+// 返回顶部 hover 颜色
+.back-to-top:hover {
+  color: white;
+}
+
+// 网站副标题、底部文字颜色
 .site-subtitle,
 .footer,
-.footer a
-  border-color white
-  color white
+.footer a {
+  border-color: white;
+  color: white;
+}
 
-.back-to-top:hover
-  color white
+// 修改首页的文章标题
+.posts-expand {
+  .post-title {
+    color: $tsuyukusa;
+  }
+
+  .post-title-link {
+    color: $tsuyukusa;
+
+    &::before {
+      background-color: $tsuyukusa;
+    }
+  }
+}
 
 
-// // 修改 markdown 引用标签的左边框颜色
-// blockquote
-//   border-left-color: $blue
+// 阅读全文按钮颜色
+.post-button .btn {
+  border-color: $tsuyukusa;
+  color: $tsuyukusa;
+
+  &:hover {
+    background: $tsuyukusa;
+    border-color: $tsuyukusa;
+    color: white;
+  }
+}
+
+// 超链接 hover 颜色
+a:hover {
+  border-bottom-color: $tsuyukusa;
+  color: $tsuyukusa;
+}
+
+// 文章页面里，所有标题的颜色
+.post-body {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $tsuyukusa;
+  }
+}
+
+
+
 
 // // 给代码块增加滚动惯性
 // figure
@@ -46,41 +105,13 @@ blockquote
 //   &.back-to-top-on
 //     bottom: 72px
 
-// // 修改背景图片
-// .container
-//   background-image: url(/images/background.webp)
-//   background-size: cover
-//   background-attachment: fixed
-//   background-color: $ruri
 
-// // ios 移动端 对webp兼容性不好，改用 jpg 图
-// .ios .container
-//   background-image: url(/images/background.jpg)
 
-// // 修改底部文字颜色
-// .footer
-//   color: $footer-color
-
-//   a
-//     color: $footer-color
-//     border-bottom-color: $footer-color
-
-// // 修正用户头像下方，联系方式图标文字偏左的文图
-// .links-of-author
-//   text-align: center
 
 // // 修正不同屏幕宽度预览时，底部上边距不统一的问题
 // .main
 //   padding-bottom: 124px!important
 
-// // 修改文章页面里，所有标题的颜色
-// .post-body
-//   h1
-//   h2
-//   h3
-//   h4
-//   h5
-//     color: $blue
 
 // // 修改首页的文章标题、发布时间一行的颜色
 // // 首页、文章页，缩小正文到发布时间一行的距离
@@ -109,12 +140,3 @@ blockquote
 //     color: $blue
 //     border-bottom-color: $blue
 
-
-
-// // 修改右上角网站标题的背景颜色
-// .site-meta
-//   background: $blue
-
-// // 站点概览
-// .sidebar-nav-overview
-//   padding: 0 5px
