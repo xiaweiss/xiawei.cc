@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <video id="myvideo" controls>
+    <source src="https://media001.geekbang.org/cfb0c10df2c8483e875d67f945d98b61/259eebe5eb808d1909b206683fcaaed2-fd-encrypt-stream.m3u8?MtsHlsUriToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiOTJhNTIzZDBhMTI1MjdlM2MxZTg1NjgxMWRhYmJhNDdiOTI0M2Q5NyIsImV4cCI6MTYyMjUyNDYyNDA5NSwiZXh0cmEiOnsidmlkIjoiY2ZiMGMxMGRmMmM4NDgzZTg3NWQ2N2Y5NDVkOThiNjEifSwicyI6MSwidCI6MSwidiI6MX0.KRbbPBYadKcWnHK9Wdv5PtnprXryXv2JRoj1yytK430" type="application/x-mpegURL">
+    <track label="Chinese" kind="subtitles" srclang="cn" src="cc.vtt" default>
+  </video>
+
+  <button class="toggle-track">toggle track</button>
+
+  <script>
+    var videoElement = document.querySelector('video');
+
+    var toggleTrackButton = document.querySelector('.toggle-track');
+    toggleTrackButton.addEventListener('click', () => {
+      var track = videoElement.textTracks[0];
+
+      track.mode = track.mode === 'showing' ? 'hidden' : 'showing'
+    });
+  </script>
+</body>
+</html>

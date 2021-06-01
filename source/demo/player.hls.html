@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <div>
+    <h1>Hls.js demo - basic usage</h1>
+    <video id="video" controls>
+      <!-- <track label="Chinese" kind="subtitles" srclang="cn" src="cc.vtt" default> -->
+    </video>
+  </div>
+
+  <script>
+    // var source = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'
+    // var source = 'master.m3u8'
+    var source = 'https://media001.geekbang.org/cfb0c10df2c8483e875d67f945d98b61/259eebe5eb808d1909b206683fcaaed2-fd-encrypt-stream.m3u8?MtsHlsUriToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiOTJhNTIzZDBhMTI1MjdlM2MxZTg1NjgxMWRhYmJhNDdiOTI0M2Q5NyIsImV4cCI6MTYyMjUyNDYyNDA5NSwiZXh0cmEiOnsidmlkIjoiY2ZiMGMxMGRmMmM4NDgzZTg3NWQ2N2Y5NDVkOThiNjEifSwicyI6MSwidCI6MSwidiI6MX0.KRbbPBYadKcWnHK9Wdv5PtnprXryXv2JRoj1yytK430'
+
+    if(Hls.isSupported()) {
+      var video = document.getElementById('video');
+      var hls = new Hls({
+          debug: true
+      });
+      hls.loadSource(source);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MEDIA_ATTACHED, function() {
+        video.muted = true;
+        video.play();
+    });
+  }
+  // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+  // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+  // This is using the built-in support of the plain video element, without using hls.js.
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = source;
+      video.addEventListener('canplay',function() {
+        video.play();
+      });
+    }
+  </script>
+
+</body>
+</html>
