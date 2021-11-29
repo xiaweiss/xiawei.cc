@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="SVG 图标是矢量图，可以很方便的转换颜色，修改文字，画质无损进行缩放，而且文件非常小，相比同样的 png 图片，大小仅为一成SVG 通过可配置颜色和配置文字的方式，有效减少了图标文件的个数。从而使设计师和前端工程师工作量都减少，还能提升了加载速度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG 的使用">
+<meta property="og:url" content="https://xiawei.cc/art/2018/20180729-svg/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="SVG 图标是矢量图，可以很方便的转换颜色，修改文字，画质无损进行缩放，而且文件非常小，相比同样的 png 图片，大小仅为一成SVG 通过可配置颜色和配置文字的方式，有效减少了图标文件的个数。从而使设计师和前端工程师工作量都减少，还能提升了加载速度">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiawei.cc/images/20180729.jpg">
+<meta property="og:image" content="https://xiawei.cc/images/20180729-buttonFollow.svg">
+<meta property="og:image" content="https://xiawei.cc/images/20180729-buttonFollow-big.svg">
+<meta property="og:image" content="https://xiawei.cc/images/20180729-png.png">
+<meta property="og:image" content="https://xiawei.cc/images/20180729-filesize.png">
+<meta property="article:published_time" content="2018-07-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-28T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiawei.cc/images/20180729.jpg">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2018/20180729-svg/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2018/20180729-svg/","path":"art/2018/20180729-svg/","title":"SVG 的使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SVG 的使用 | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG-%E5%9B%BE%E6%A0%87%E7%A4%BA%E4%BE%8B"><span class="nav-text">SVG 图标示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG-%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="nav-text">SVG 代码说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%B8%B2%E6%9F%93-SVG"><span class="nav-text">动态渲染 SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-art"><span class="nav-text">react-art</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-native-art-API"><span class="nav-text">react-native-art API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Surface"><span class="nav-text">Surface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group"><span class="nav-text">Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shape"><span class="nav-text">Shape</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text"><span class="nav-text">Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transform"><span class="nav-text">Transform</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG-path-%E8%AF%B4%E6%98%8E"><span class="nav-text">SVG path 说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReactNativeSvg-%E7%A4%BA%E4%BE%8B"><span class="nav-text">ReactNativeSvg 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReactNativeART-%E7%A4%BA%E4%BE%8B"><span class="nav-text">ReactNativeART 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%B7%B1%E5%B0%81%E8%A3%85%E7%9A%84-RectART"><span class="nav-text">自己封装的 RectART</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2018/20180729-svg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SVG 的使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2018-07-29 00:00:00" itemprop="dateModified" datetime="2018-07-29T00:00:00+08:00">2018-07-29</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="https://xiawei.cc/images/20180729.jpg" alt="20180729"></p>
+<blockquote>
+<p>SVG 图标是矢量图，可以很方便的转换颜色，修改文字，画质无损进行缩放，而且文件非常小，相比同样的 png 图片，大小仅为一成<br>SVG 通过可配置颜色和配置文字的方式，有效减少了图标文件的个数。从而使设计师和前端工程师工作量都减少，还能提升了加载速度</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>说到性能优化，常见的一种方式就是压缩图片，通常图片最多压缩到原文件的 50%。而且如果一个图标有 7 种颜色呢？那么设计就得给出 7 种颜色的图片，前端代码也得引用不同的 7 个路径。。。想想都觉得复杂。</p>
+<p>SVG 图完美地解决了这一痛点，大小仅为原文件 10% 左右。还可以通过改写代码来任意改变颜色，甚至支持在代码中动态地传入颜色。动态地传入颜色时，即便有 1万种颜色，也仅仅一个文件。</p>
+<p>而生成 SVG 文件也非常简单，设计师可以使用 矢量图 绘图软件直接导出 svg 格式的文件，如 Adobe Illustrator（简称 AI）、sketch</p>
+<p>当然对于 Adobe Photoshop 中绘制的图片，手工转换矢量图比较困难耗时，在线工具解决了这一难题</p>
+<p>其中目前免费在线转换工具里，这款是最好的 <a target="_blank" rel="noopener" href="https://www.vectorizer.io/">https://www.vectorizer.io/</a></p>
+<p>转换后，可能会有一些冗余的代码，可以使用命令行工具 <a target="_blank" rel="noopener" href="https://github.com/svg/svgo">svgo</a> 进行批量压缩。当然如果文件数量不多，直接使用在线工具 <a target="_blank" rel="noopener" href="https://jakearchibald.github.io/svgomg/">https://jakearchibald.github.io/svgomg/</a> 即可。</p>
+<p>这些个 SVG 压缩工具只是静态工具，不会被上传到网络上去，不需要担心被盗图，有兴趣的同学可以研究下源码，以及那个<a target="_blank" rel="noopener" href="https://github.com/jakearchibald/svgomg">web 压缩工具的源码</a></p>
+<h2 id="SVG-图标示例"><a href="#SVG-图标示例" class="headerlink" title="SVG 图标示例"></a>SVG 图标示例</h2><p>首先 svg 在浏览器里和手机上，与图片一样的，可以正常显示出来<br>下面这个就是一个完整的 SVG 图，包括文字</p>
+<p><img data-src="https://xiawei.cc/images/20180729-buttonFollow.svg" alt="20180729-buttonFollow"></p>
+<p>下面将它改写为为 400px 宽度的 SVG 图，仍然可以看到很清晰</p>
+<p><img data-src="https://xiawei.cc/images/20180729-buttonFollow-big.svg" alt="20180729-buttonFollow-big"></p>
+<p>接下来，使用微信屏幕截图，看看同样 400px 宽度的 png 图，并且使用<a target="_blank" rel="noopener" href="http://zhitu.isux.us/">智图</a> 压缩图片</p>
+<p><img data-src="https://xiawei.cc/images/20180729-png.png" alt="20180729-png"></p>
+<p>接下来看看这三个文件的大小</p>
+<p><img data-src="https://xiawei.cc/images/20180729-filesize.png" alt="20180729-filesize"></p>
+<p>可以看出 SVG 图可以任意改变尺寸，不损失清晰度<br>相比 png 图体积小很多的情况下，仍然比 png 图更清晰</p>
+<p>接下来使用代码编辑器打开 SVG 文件，可以看到如下代码</p>
+<p>也许看到这一堆代码要头晕了。别担心，实际应用时，并不需要自己手写 SVG 代码，只是改改就足够了<br>仔细看很类似前端常用的 html 标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;60px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24px&quot;</span> <span class="attr">viewBox</span>=<span class="string">&quot;0 0 60 24&quot;</span> <span class="attr">version</span>=<span class="string">&quot;1.1&quot;</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="attr">xmlns:xlink</span>=<span class="string">&quot;http://www.w3.org/1999/xlink&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>按钮/关注-红色底<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">desc</span>&gt;</span>Created with Sketch.<span class="tag">&lt;/<span class="name">desc</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">defs</span>&gt;</span><span class="tag">&lt;/<span class="name">defs</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">&quot;按钮/关注-红色底&quot;</span> <span class="attr">stroke</span>=<span class="string">&quot;none&quot;</span> <span class="attr">stroke-width</span>=<span class="string">&quot;1&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;none&quot;</span> <span class="attr">fill-rule</span>=<span class="string">&quot;evenodd&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rect</span> <span class="attr">id</span>=<span class="string">&quot;Rectangle-3&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;#FF4C6A&quot;</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;60&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24&quot;</span> <span class="attr">rx</span>=<span class="string">&quot;12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rect</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">&quot;icon/关注加号&quot;</span> <span class="attr">transform</span>=<span class="string">&quot;translate(3.000000, 0.000000)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">&quot;Group&quot;</span> <span class="attr">stroke-width</span>=<span class="string">&quot;1&quot;</span> <span class="attr">transform</span>=<span class="string">&quot;translate(8.000000, 8.000000)&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;#FFFFFF&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">&quot;M3,3 L3,1 C3,0.44771525 3.44771525,1.01453063e-16 4,0 C4.55228475,-1.01453063e-16 5,0.44771525 5,1 L5,3 L7,3 C7.55228475,3 8,3.44771525 8,4 C8,4.55228475 7.55228475,5 7,5 L5,5 L5,7 C5,7.55228475 4.55228475,8 4,8 C3.44771525,8 3,7.55228475 3,7 L3,5 L1,5 C0.44771525,5 6.76353751e-17,4.55228475 0,4 C-6.76353751e-17,3.44771525 0.44771525,3 1,3 L3,3 Z&quot;</span> <span class="attr">id</span>=<span class="string">&quot;Combined-Shape&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rect</span> <span class="attr">id</span>=<span class="string">&quot;Rectangle-10&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;#D8D8D8&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0&quot;</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;24&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rect</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">&quot;哈哈&quot;</span> <span class="attr">font-family</span>=<span class="string">&quot;PingFangSC-Regular, PingFang SC&quot;</span> <span class="attr">font-size</span>=<span class="string">&quot;12&quot;</span> <span class="attr">font-weight</span>=<span class="string">&quot;normal&quot;</span> <span class="attr">line-spacing</span>=<span class="string">&quot;18&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;#FFFFFF&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">x</span>=<span class="string">&quot;24&quot;</span> <span class="attr">y</span>=<span class="string">&quot;16&quot;</span>&gt;</span>哈哈<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="SVG-代码说明"><a href="#SVG-代码说明" class="headerlink" title="SVG 代码说明"></a>SVG 代码说明</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;60px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24px&quot;</span> <span class="attr">viewBox</span>=<span class="string">&quot;0 0 60 24&quot;</span> <span class="attr">...</span> &gt;</span> ... <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>svg 标签来控制宽高，width，height 是实际显示的宽高，可以修改为你想要显示的大小<br>而 viewBox 里的大小，则是原始大小，可以理解为画纸的大小位置，其中左上角坐标为 0 0，右下角坐标为 60 24（方向分别为 x, y）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">g</span> <span class="attr">id</span>=<span class="string">&quot;Group&quot;</span> <span class="attr">stroke-width</span>=<span class="string">&quot;1&quot;</span> <span class="attr">transform</span>=<span class="string">&quot;translate(8.000000, 8.000000)&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;#FFFFFF&quot;</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>g 标签表示分组，也就是绘图软件中的图层。类似代码中的继承，它的属性，如果子标签里没有规定，就会使用它的属性设置<br>例如下面这两段代码是同样的效果</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">g</span> <span class="attr">fill</span>=<span class="string">&quot;#FF4C6A&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;60&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24&quot;</span> <span class="attr">rx</span>=<span class="string">&quot;12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rect</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">g</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">fill</span>=<span class="string">&quot;#FF4C6A&quot;</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;60&quot;</span> <span class="attr">height</span>=<span class="string">&quot;24&quot;</span> <span class="attr">rx</span>=<span class="string">&quot;12&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">rect</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>path 表示线条， reat 表示方形，text 表示文字<br>代码 <code>d=&quot;M3,3 L3,1 ...&#39;</code> 是绘制线条的代码，也称作路径（path）</p>
+<p>fill 表示填充色，类似于 css 里的背景色（background-color）</p>
+<p>stroke 表示描边，类似于 css 的边框颜色（border-color）</p>
+<p>所以修改色值时，只需要修改这两个颜色即可<br>色值与 css 相同，可以使用透明色 transparent，以及 rgba(0,0,0,0.5)<br>也可以添加属性 <code>opacity=&#39;0.5&#39;</code> 来控制透明度，值为 0 ~ 1</p>
+<p>至于修改文字，找到对应的文字，直接替换即可</p>
+<h3 id="动态渲染-SVG"><a href="#动态渲染-SVG" class="headerlink" title="动态渲染 SVG"></a>动态渲染 SVG</h3><p>由于最近正在做 react-native， SVG 的配置难度较大，就用它来示例一下</p>
+<p>这里使用 react-native-svg 库来渲染 SVG 图片</p>
+<p><span style="color:red">注意设计师导出 SVG 图标前，请清除掉蒙层（mask）、颜色叠加和滤镜（filter）、阴影（shadow），目前 react-native 是不支持的</span></p>
+<p>可以使用 [SVGR: The SVG to JSX transformer][]</p>
+<blockquote>
+<p>首先使用 msvgc 库来一键把 SVG 文件转换为 React 组件<br>nodejs 环境里安装 msvgc，源文件放置到 App/Svg/目录下，配置脚本运行即可<br>导出的组件位于 <code>./App/Components/Svg/svg</code> 目录</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line"> <span class="attr">&quot;svg&quot;</span>: <span class="string">&quot;msvgc --react-native -f ./App/Svg/ -o ./App/Components/Svg  &amp;&amp; standard &gt; &gt; --fix &#x27;./App/Components/Svg/svg/*.js&#x27;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>再把修正属性的语法，全部改为驼峰写法，例如 <code>fill-rule</code> 改为 <code>fillRule</code><br>修正后将文件移动到 <code>App/Components/Svg</code>(其他目录也昆虫，因为每次新转换时，会覆盖<code>App/Components/Svg/svg/</code> 目录)</p>
+</blockquote>
+<blockquote>
+<p>接下来，进一步修改代码，就可以通过组件的 props 值里动态传参了</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Svg, &#123; G, Rect, Path, Text &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native-svg&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; path &#125; <span class="keyword">from</span> <span class="string">&#x27;ramda&#x27;</span> <span class="comment">// 根据键名取值，取不到或错误时，返回 undefined</span></span><br><span class="line"><span class="comment">// path([键名]，被取值的对象)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ButtonFollow = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> Color = &#123;</span><br><span class="line">    <span class="attr">red</span>: <span class="string">&#x27;#ff4c6a&#x27;</span>,</span><br><span class="line">    <span class="attr">grey</span>: <span class="string">&#x27;#6c6c6c&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> fillColor = path([props.color], Color) || props.color || Color.red</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">Svg</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">      <span class="attr">width</span>=<span class="string">&#123;props.width</span> || <span class="attr">60</span>&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">      <span class="attr">height</span>=<span class="string">&#123;props.height</span> || <span class="attr">24</span>&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">      <span class="attr">viewBox</span>=<span class="string">&#x27;0 0 60 24&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">G</span> <span class="attr">stroke</span>=<span class="string">&#x27;none&#x27;</span> <span class="attr">strokeWidth</span>=<span class="string">&#x27;1&#x27;</span> <span class="attr">fill</span>=<span class="string">&#x27;none&#x27;</span> <span class="attr">fillRule</span>=<span class="string">&#x27;evenodd&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Rect</span> <span class="attr">fill</span>=<span class="string">&#123;fillColor&#125;</span> <span class="attr">x</span>=<span class="string">&#x27;0&#x27;</span> <span class="attr">y</span>=<span class="string">&#x27;0&#x27;</span> <span class="attr">width</span>=<span class="string">&#x27;60&#x27;</span> <span class="attr">height</span>=<span class="string">&#x27;24&#x27;</span> <span class="attr">rx</span>=<span class="string">&#x27;12&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">G</span> <span class="attr">strokeWidth</span>=<span class="string">&#x27;1&#x27;</span> <span class="attr">transform</span>=<span class="string">&#x27;translate(8, 8)&#x27;</span> <span class="attr">fill</span>=<span class="string">&#x27;#FFFFFF&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Path</span> <span class="attr">d</span>=<span class="string">&#x27;M3,3 L3,1 C3,0.44771525 3.44771525,1.01453063e-16 4,0 C4.55228475,-1.01453063e-16 5,0.44771525 5,1 L5,3 L7,3 C7.55228475,3 8,3.44771525 8,4 C8,4.55228475 7.55228475,5 7,5 L5,5 L5,7 C5,7.55228475 4.55228475,8 4,8 C3.44771525,8 3,7.55228475 3,7 L3,5 L1,5 C0.44771525,5 6.76353751e-17,4.55228475 0,4 C-6.76353751e-17,3.44771525 0.44771525,3 1,3 L3,3 Z&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">G</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Text</span> <span class="attr">fontSize</span>=<span class="string">&#x27;12&#x27;</span> <span class="attr">lineSpacing</span>=<span class="string">&#x27;18&#x27;</span> <span class="attr">fill</span>=<span class="string">&#x27;#FFFFFF&#x27;</span> <span class="attr">x</span>=<span class="string">&#x27;24&#x27;</span> <span class="attr">y</span>=<span class="string">&#x27;16&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          &#123;props.text || &#x27;关注&#x27;&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">G</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">Svg</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ButtonFollow</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ButtonFollow</span> <span class="attr">width</span>=<span class="string">&#123;300&#125;</span> <span class="attr">height</span>=<span class="string">&#123;120&#125;</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ButtonFollow</span> /&gt;</span> 取默认值 64，24，默认色 red</span><br><span class="line"><span class="tag">&lt;<span class="name">ButtonFollow</span> <span class="attr">width</span>=<span class="string">&#123;300&#125;</span> <span class="attr">height</span>=<span class="string">&#123;120&#125;</span> <span class="attr">color</span>=<span class="string">&#x27;#ccc&#x27;</span> /&gt;</span> 任意颜色</span><br></pre></td></tr></table></figure>
+
+<h3 id="react-art"><a href="#react-art" class="headerlink" title="react-art"></a>react-art</h3><p>(基于 react-naive 0.55.4 介绍)</p>
+<p>facebook 自家也出品了一个库 react-art，并且有 react-native-art，二者大体上使用的同一套 API<br>它支持的元素标签交少，例如没有方形。但更简洁，不需要引入额外库<br>（react-native-svg 压缩后大约 200KB）</p>
+<p>相关语法可以看 <a target="_blank" rel="noopener" href="http://daguang.me/2016/08/17/react-native-art-%E7%BB%98%E5%9B%BE%E5%85%A5%E9%97%A8/">react-native-art-绘图入门</a> 了解一下<br>源码位于 <code>node_modules/react-native/Libraries/ART/ReactNativeART.js</code><br>缺点是还没有找到现成的转换插件，需要手工转换</p>
+<p>首先来封装一个方形组件，width、height 控制宽高，r 控制圆角半径（border-radius）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; ART &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; Shape &#125; = ART</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extractNumber</span> (<span class="params">value, defaultValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (value == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> defaultValue</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> +value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> RectART = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> w = extractNumber(props.width, <span class="number">0</span>)</span><br><span class="line">  <span class="keyword">let</span> h = extractNumber(props.height, <span class="number">0</span>)</span><br><span class="line">  <span class="keyword">let</span> r = extractNumber(props.r, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (w === <span class="number">0</span> || h === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (r &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    h -= r * <span class="number">2</span></span><br><span class="line">    w -= r * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Shape</span> &#123;<span class="attr">...props</span>&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">      <span class="attr">d</span>=<span class="string">&#123;</span>`<span class="attr">M</span>$&#123;<span class="attr">r</span>&#125;,<span class="attr">0</span> <span class="attr">h</span>$&#123;<span class="attr">w</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">h</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">-r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">h</span>$&#123;<span class="attr">-w</span>&#125;  <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">-r</span>&#125;,$&#123;<span class="attr">-r</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">-h</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">-r</span>&#125; <span class="attr">z</span>`&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">    /&gt;</span></span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Shape</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">d</span>=<span class="string">&#123;</span>`<span class="attr">h</span>$&#123;<span class="attr">w</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">h</span>&#125; <span class="attr">h</span>$&#123;<span class="attr">-w</span>&#125; <span class="attr">z</span>`&#125; /&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> RectART</span><br></pre></td></tr></table></figure>
+
+<p>接下来转换按钮</p>
+<ol>
+<li>将 svg 换为 Surface，宽高为显示端宽高，不指定画布大小</li>
+<li>Surface 内层写上一层 Group ，添加属性 scale 用于整体缩放，缩放倍数 X 基于画布原始大小来计算</li>
+<li>g 转换为 Group， Group 里的属性只支持 fill 和 transform，其他的都写到子标签里去</li>
+<li>path 转换为 Shape，d 仍然是路径，复制过来即可（react-art 内置了一套 svg 转换器，源码位于路径 <code>node_modules/art/core/path.js</code>）</li>
+<li>transform 转换为这种形式，注意 scale 要放在左边，与 css3 相同还支持 rotate<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform = <span class="keyword">new</span> Transform().scale(<span class="number">2</span>).translate(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure></li>
+<li>text 转换为 Text，直接包裹文字即可，</li>
+</ol>
+<p>其中 font 指定字体格式（注意必须指定字体）<br>（react-native 里指定多个字体只有第一个字体生效）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font=<span class="string">&#x27;normal 12 PingFangSC-Regular&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>也可以写为（注意必须指定字体）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font=&#123;<span class="attr">fontFamily</span>: <span class="string">&#x27;PingFangSC-Regular&#x27;</span>,<span class="attr">fontSize</span>: <span class="string">&#x27;12&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>还有两个属性是 fontWeight、fontStyle</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; path &#125; <span class="keyword">from</span> <span class="string">&#x27;ramda&#x27;</span> <span class="comment">// 根据键名取值，取不到或错误时，返回 undefined</span></span><br><span class="line"><span class="comment">// path([键名]，被取值的对象)</span></span><br><span class="line"><span class="keyword">import</span> &#123; ART, View &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Rect <span class="keyword">from</span> <span class="string">&#x27;./RectART.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; Group, Shape, Surface, Transform, Text &#125; = ART</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ButtonFollow = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> Color = &#123;</span><br><span class="line">    <span class="attr">red</span>: <span class="string">&#x27;#ff4c6a&#x27;</span>,</span><br><span class="line">    <span class="attr">grey</span>: <span class="string">&#x27;#6c6c6c&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> fillColor = path([props.color], Color) || props.color || Color.red</span><br><span class="line">  <span class="keyword">const</span> X = (<span class="built_in">Math</span>.min(props.width / <span class="number">60</span>, props.height / <span class="number">24</span>)) || <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;props.style&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">Surface</span> <span class="attr">width</span>=<span class="string">&#123;props.width</span> || <span class="attr">60</span>&#125; <span class="attr">height</span>=<span class="string">&#123;props.height</span> || <span class="attr">24</span>&#125; &gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Group</span> <span class="attr">scale</span>=<span class="string">&#123;X&#125;</span> &gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Rect</span> <span class="attr">fill</span>=<span class="string">&#123;fillColor&#125;</span> <span class="attr">r</span>=<span class="string">&#x27;12&#x27;</span> <span class="attr">width</span>=<span class="string">&#x27;60&#x27;</span> <span class="attr">height</span>=<span class="string">&#x27;24&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Shape</span> <span class="attr">fill</span>=<span class="string">&#x27;#FFFFFF&#x27;</span> <span class="attr">transform</span>=<span class="string">&#123;new</span> <span class="attr">Transform</span>()<span class="attr">.translate</span>(<span class="attr">8</span>, <span class="attr">8</span>)&#125; <span class="attr">d</span>=<span class="string">&#x27;M3,3 L3,1 C3,0.44771525 3.44771525,1.01453063e-16 4,0 C4.55228475,-1.01453063e-16 5,0.44771525 5,1 L5,3 L7,3 C7.55228475,3 8,3.44771525 8,4 C8,4.55228475 7.55228475,5 7,5 L5,5 L5,7 C5,7.55228475 4.55228475,8 4,8 C3.44771525,8 3,7.55228475 3,7 L3,5 L1,5 C0.44771525,5 6.76353751e-17,4.55228475 0,4 C-6.76353751e-17,3.44771525 0.44771525,3 1,3 L3,3 Z&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Text</span> <span class="attr">font</span>=<span class="string">&#123;</span>&#x27;<span class="attr">normal</span> <span class="attr">12</span> <span class="attr">PingFangSC-Regular</span>&#x27;&#125; <span class="attr">fill</span>=<span class="string">&#x27;#FFF&#x27;</span> <span class="attr">transform</span>=<span class="string">&#123;new</span> <span class="attr">Transform</span>()<span class="attr">.translate</span>(<span class="attr">24</span>, <span class="attr">4</span>)&#125;&gt;</span></span></span><br><span class="line"><span class="xml">            &#123;props.text || &#x27;关注&#x27;&#125;</span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">Group</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Surface</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ButtonFollow</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ButtonFollow</span> <span class="attr">width</span>=<span class="string">&#123;300&#125;</span> <span class="attr">height</span>=<span class="string">&#123;120&#125;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="react-native-art-API"><a href="#react-native-art-API" class="headerlink" title="react-native-art API"></a>react-native-art API</h2><p>(基于 react-naive 0.55.4 介绍)<br>下面是我看了源码之后罗列的 API，供参考使用</p>
+<p>相关语法可以看 <a target="_blank" rel="noopener" href="http://daguang.me/2016/08/17/react-native-art-%E7%BB%98%E5%9B%BE%E5%85%A5%E9%97%A8/">react-native-art-绘图入门</a> 了解一下<br>源码位于 <code>node_modules/react-native/Libraries/ART/ReactNativeART.js</code></p>
+<h3 id="Surface"><a href="#Surface" class="headerlink" title="Surface"></a>Surface</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>width</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>heigh</td>
+<td>string</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>opacity</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleX</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleY</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>transform</td>
+<td>transform</td>
+<td></td>
+</tr>
+<tr>
+<td>visible</td>
+<td>boolean</td>
+<td>false equals opacity 0</td>
+</tr>
+</tbody></table>
+<h3 id="Shape"><a href="#Shape" class="headerlink" title="Shape"></a>Shape</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d</td>
+<td>path</td>
+<td></td>
+</tr>
+<tr>
+<td>fill</td>
+<td>string</td>
+<td>Color</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleX</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleY</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>stroke</td>
+<td>string</td>
+<td>Color</td>
+</tr>
+<tr>
+<td>strokeCap</td>
+<td>string</td>
+<td>butt, square, round(default)</td>
+</tr>
+<tr>
+<td>strokeDash</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>strokeJoin</td>
+<td>string</td>
+<td>miter, bevel, round</td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>number</td>
+<td>1(default)</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>transform</td>
+<td></td>
+</tr>
+<tr>
+<td>visible</td>
+<td>boolean</td>
+<td>false equals opacity 0</td>
+</tr>
+</tbody></table>
+<h3 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alignment</td>
+<td>string</td>
+<td>right, center, left(default)</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>string</td>
+<td>Color</td>
+</tr>
+<tr>
+<td>font</td>
+<td>string</td>
+<td>normal 10 PingFangSC-Regular</td>
+</tr>
+<tr>
+<td>font</td>
+<td>object</td>
+<td>{fontFamily,fontSize,fontWeight,fontStyle}</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>path</td>
+<td>path</td>
+<td></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleX</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleX</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleY</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleY</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>strokeCap</td>
+<td>string</td>
+<td>butt, square, round(default)</td>
+</tr>
+<tr>
+<td>strokeDash</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>strokeJoin</td>
+<td>string</td>
+<td>miter, bevel, round</td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>number</td>
+<td>1(default)</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>transform</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>params</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>transform</td>
+<td>xx, yx, xy, yy, x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>translate</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>move</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>moveTo</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>scale</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>scaleTo</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>deg, x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>rotateTo</td>
+<td>deg, x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>resizeTo</td>
+<td>width, height</td>
+<td>this.scaleTo(width / w, height / h)</td>
+</tr>
+<tr>
+<td>point</td>
+<td>x, y</td>
+<td></td>
+</tr>
+<tr>
+<td>inversePoint</td>
+<td>x, y</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>上面表格含 To 的都是绝对坐标，例如 move 是相对坐标，moveTo 是绝对坐标</p>
+<p>LinearGradient<br>| params | type   | Description     |<br>| —— | —— | ————— |<br>| stop   | object |                 |<br>| x0     | number | 非必填，默认270 |<br>| y0     | number | 非必填          |<br>| x1     | number | 非必填          |<br>| y1     | number | 非必填          |</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linearGradient = <span class="keyword">new</span> LinearGradient(&#123;</span><br><span class="line">  <span class="string">&#x27;.1&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>, <span class="comment">// blue in 1% position</span></span><br><span class="line">  <span class="string">&#x27;1&#x27;</span>: <span class="string">&#x27;rgba(255, 255, 255, 0)&#x27;</span> <span class="comment">// opacity white in 100% position</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;0&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;0&quot;</span>, <span class="string">&quot;400&quot;</span></span><br><span class="line">)</span><br><span class="line">&lt;Shape fill=&#123;linearGradient&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>其他存在但不常用的 API<br>Path<br>ClippingRectangle<br>LinearGradient<br>Pattern<br>RadialGradient</p>
+<h2 id="SVG-path-说明"><a href="#SVG-path-说明" class="headerlink" title="SVG path 说明"></a>SVG path 说明</h2><p>具体可以看 w3c 官方文档 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/SVG2/paths.html">https://www.w3.org/TR/SVG2/paths.html</a><br>大写字母都代表绝对坐标<br>小写字母都代表相对坐标</p>
+<p>下面这几个写法效果相同<br>M 10 20 M 15 25 v 5<br>M 10,20 M 15,25 v 5<br>M10,20 M15,25 v5<br>M10,20 15,25 v5 (与前一个字母相同时，字母可以省略)</p>
+<p>字母主要有以下几种，可以对应到上面的表格</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Name</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M</td>
+<td>moveto</td>
+<td>x, y</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>L</td>
+<td>lineto</td>
+<td>x, y</td>
+<td>画线</td>
+</tr>
+<tr>
+<td>H</td>
+<td>horizontal lineto</td>
+<td>x</td>
+<td>画水平线</td>
+</tr>
+<tr>
+<td>V</td>
+<td>vertical lineto</td>
+<td>y</td>
+<td>画垂直线</td>
+</tr>
+<tr>
+<td>A</td>
+<td>elliptical arc</td>
+<td></td>
+<td>椭圆</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>closepath</td>
+<td></td>
+<td>连接到起始点，只能在最后使用</td>
+</tr>
+</tbody></table>
+<p>椭圆 A 有6个参数 rx ry x-axis-rotation large-arc-flag sweep-flag x y<br>含义分别为</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rx</td>
+<td>x 轴半径</td>
+</tr>
+<tr>
+<td>ry</td>
+<td>y 轴半径</td>
+</tr>
+<tr>
+<td>x-axis-rotation</td>
+<td>相对于 x 轴的旋转角度，例如 30 表示 30 度</td>
+</tr>
+<tr>
+<td>large-arc-flag</td>
+<td>1 绘制大圆，0 绘制小圆</td>
+</tr>
+<tr>
+<td>sweep-flag</td>
+<td>旋转方式： 1 顺时针，0 逆时针</td>
+</tr>
+<tr>
+<td>x</td>
+<td>结束点的 x 坐标</td>
+</tr>
+<tr>
+<td>y</td>
+<td>结束点的 x 坐标</td>
+</tr>
+</tbody></table>
+<h2 id="ReactNativeSvg-示例"><a href="#ReactNativeSvg-示例" class="headerlink" title="ReactNativeSvg 示例"></a>ReactNativeSvg 示例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; View &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Svg, &#123; G, Path &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native-svg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// react-native-svg 8.0.8 版本 svg 内元素有可能过大，导致点击区域超出预期范围</span></span><br><span class="line"><span class="comment">// 包裹 View 设置 &#123;overflow: &#x27;hidden&#x27;&#125; 样式可以解决此问题</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> HeaderBack = <span class="function"><span class="params">props</span> =&gt;</span> (</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;&#123;overflow:</span> &#x27;<span class="attr">hidden</span>&#x27;&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">Svg</span> <span class="attr">viewBox</span>=<span class="string">&#x27;0 0 8 14&#x27;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;width:</span> <span class="attr">8</span>, <span class="attr">height:</span> <span class="attr">14</span>&#125;&#125; &#123;<span class="attr">...props</span>&#125;&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">G</span> <span class="attr">fill</span>=<span class="string">&#x27;none&#x27;</span> <span class="attr">fillRule</span>=<span class="string">&#x27;evenodd&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Path</span> <span class="attr">d</span>=<span class="string">&#x27;M-18-15h44v44h-44z&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Path</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">          <span class="attr">stroke</span>=<span class="string">&#123;props.color</span> || &#x27;#<span class="attr">666</span>&#x27;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">          <span class="attr">strokeWidth</span>=<span class="string">&#123;2&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">          <span class="attr">strokeLinecap</span>=<span class="string">&#x27;round&#x27;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">          <span class="attr">strokeLinejoin</span>=<span class="string">&#x27;round&#x27;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">          <span class="attr">d</span>=<span class="string">&#x27;M7 1L1 7 l6 6&#x27;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">        /&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">G</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">Svg</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> HeaderBack</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="ReactNativeART-示例"><a href="#ReactNativeART-示例" class="headerlink" title="ReactNativeART 示例"></a>ReactNativeART 示例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="comment">// &lt;HeaderBack /&gt;</span></span><br><span class="line"><span class="comment">// &lt;HeaderBack color=&#x27;red&#x27; /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;ramda/es/path&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; ART, View &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; Group, Shape, Surface, Transform &#125; = ART</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HeaderBack</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; props &#125; = <span class="built_in">this</span></span><br><span class="line">    <span class="keyword">const</span> Color = &#123;</span><br><span class="line">      <span class="attr">black</span>: <span class="string">&#x27;#666&#x27;</span>,</span><br><span class="line">      <span class="attr">red</span>: <span class="string">&#x27;rgba(102,102,102,.4)&#x27;</span>,</span><br><span class="line">      <span class="attr">white</span>: <span class="string">&#x27;#fff&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> fillColor = path([props.color], Color) || props.color || Color.black</span><br><span class="line">    <span class="keyword">const</span> X = (props.width &amp;&amp; props.height) ? <span class="built_in">Math</span>.min(props.width / <span class="number">11</span>, props.height / <span class="number">17</span>) : props.width / <span class="number">11</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;props.style&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">Surface</span> <span class="attr">width</span>=<span class="string">&#123;props.width</span> || <span class="attr">11</span>&#125; <span class="attr">height</span>=<span class="string">&#123;props.height</span> || <span class="attr">17</span>&#125; &gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Group</span> <span class="attr">transform</span>=<span class="string">&#123;new</span> <span class="attr">Transform</span>()<span class="attr">.scale</span>(<span class="attr">X</span> || <span class="attr">1</span>)&#125;&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">Shape</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">              <span class="attr">strokeWidth</span>=<span class="string">&#123;2&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">              <span class="attr">stroke</span>=<span class="string">&#123;fillColor&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">              <span class="attr">transform</span>=<span class="string">&#123;new</span> <span class="attr">Transform</span>()<span class="attr">.translate</span>(<span class="attr">-18</span>, <span class="attr">-15</span>)&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">              <span class="attr">d</span>=<span class="string">&#x27;M25,16 L19,22 L25,28&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;/<span class="name">Group</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">Surface</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自己封装的-RectART"><a href="#自己封装的-RectART" class="headerlink" title="自己封装的 RectART"></a>自己封装的 RectART</h2><p>ReactART 没有提供方形、带圆角的方形，所以自己封装了一个</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用（必须在 Surface 标签内使用）</span></span><br><span class="line"><span class="comment">// &lt;RectART width=&#123;100&#125; height=&#123;100&#125; r=&#123;10&#125;&gt;</span></span><br><span class="line"><span class="comment">// r 为圆角半径 border-radius，不写默认为 0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; ART &#125; <span class="keyword">from</span> <span class="string">&#x27;react-native&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; Shape &#125; = ART</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extractNumber</span> (<span class="params">value, defaultValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (value == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> defaultValue</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> +value</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> RectART = <span class="function"><span class="params">props</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> w = extractNumber(props.width, <span class="number">0</span>)</span><br><span class="line">  <span class="keyword">let</span> h = extractNumber(props.height, <span class="number">0</span>)</span><br><span class="line">  <span class="keyword">let</span> r = extractNumber(props.r, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (w === <span class="number">0</span> || h === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (r &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    h -= r * <span class="number">2</span></span><br><span class="line">    w -= r * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Shape</span> &#123;<span class="attr">...props</span>&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">      <span class="attr">d</span>=<span class="string">&#123;</span>`<span class="attr">M</span>$&#123;<span class="attr">r</span>&#125;,<span class="attr">0</span> <span class="attr">h</span>$&#123;<span class="attr">w</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">h</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">-r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">h</span>$&#123;<span class="attr">-w</span>&#125;  <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">-r</span>&#125;,$&#123;<span class="attr">-r</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">-h</span>&#125; <span class="attr">a</span>$&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">r</span>&#125; <span class="attr">0</span> <span class="attr">0</span>,<span class="attr">1</span> $&#123;<span class="attr">r</span>&#125;,$&#123;<span class="attr">-r</span>&#125; <span class="attr">z</span>`&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">    /&gt;</span></span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Shape</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">d</span>=<span class="string">&#123;</span>`<span class="attr">h</span>$&#123;<span class="attr">w</span>&#125; <span class="attr">v</span>$&#123;<span class="attr">h</span>&#125; <span class="attr">h</span>$&#123;<span class="attr">-w</span>&#125; <span class="attr">z</span>`&#125; /&gt;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> RectART</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>封面图片来源：<a target="_blank" rel="noopener" href="https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=38190692">https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=38190692</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/svg/" rel="tag"><i class="fa fa-tag"></i> svg</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/art/2018/20180726-javascript-code-format/" rel="prev" title="JavaScript 代码格式化">
+                  <i class="fa fa-chevron-left"></i> JavaScript 代码格式化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2018/20181225-swift-language-guide/" rel="next" title="Swift 指南学习笔记">
+                  Swift 指南学习笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="之前购买了阿里云服务器，为了运行自己的网站，需要 webServerapache httpd + php 或者 nginx + php 都是不错的选择新手还是推荐使用 宝塔面板，可以一键安装部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在centOS7 编译安装 php、apache">
+<meta property="og:url" content="https://xiawei.cc/art/2017/20171115-install-php-and-apache-on-centos7/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="之前购买了阿里云服务器，为了运行自己的网站，需要 webServerapache httpd + php 或者 nginx + php 都是不错的选择新手还是推荐使用 宝塔面板，可以一键安装部署">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-11-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2017-11-14T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="环境配置">
+<meta property="article:tag" content="apache">
+<meta property="article:tag" content="centOS">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2017/20171115-install-php-and-apache-on-centos7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2017/20171115-install-php-and-apache-on-centos7/","path":"art/2017/20171115-install-php-and-apache-on-centos7/","title":"在centOS7 编译安装 php、apache"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在centOS7 编译安装 php、apache | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%EF%BC%88%E4%B8%8D%E5%BB%BA%E8%AE%AE%EF%BC%89"><span class="nav-text">0. 安装图形界面（不建议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7"><span class="nav-text">1. 远程连接工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7"><span class="nav-text">2. 设置用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">3. 准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85Httpd-2-4"><span class="nav-text">4. 安装Httpd 2.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Requirements"><span class="nav-text">4.1 Requirements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85httpd"><span class="nav-text">4.2 编译安装httpd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%85PHP-7-1-5"><span class="nav-text">5. 安装PHP 7.1.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E9%85%8D%E7%BD%AE"><span class="nav-text">6. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E9%85%8D%E7%BD%AEPHP%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-text">6.1 配置PHP（可选）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E9%85%8D%E7%BD%AEHTTP"><span class="nav-text">6.2 配置HTTP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%90%AF%E5%8A%A8HTTPD"><span class="nav-text">7. 启动HTTPD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%85%8D%E7%BD%AE-%E9%98%BF%E9%87%8C%E4%BA%91-%E5%AE%89%E5%85%A8%E7%BB%84%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="nav-text">8. 配置 阿里云 安全组设置，开放端口</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2017/20171115-install-php-and-apache-on-centos7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在centOS7 编译安装 php、apache
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2017-11-15 00:00:00" itemprop="dateModified" datetime="2017-11-15T00:00:00+08:00">2017-11-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>之前购买了阿里云服务器，为了运行自己的网站，需要 webServer<br>apache httpd + php 或者 nginx + php 都是不错的选择<br>新手还是推荐使用 宝塔面板，可以一键安装部署</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="0-安装图形界面（不建议）"><a href="#0-安装图形界面（不建议）" class="headerlink" title="0. 安装图形界面（不建议）"></a>0. 安装图形界面（不建议）</h2><p>不推荐安装，会降低服务器性能。但自己本地练习，可以考虑安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum group install &quot;GNOME Desktop&quot; &quot;Graphical Administration Tools&quot;</span><br><span class="line">yum groupinstall &quot;Server with GUI&quot;</span><br></pre></td></tr></table></figure>
+<p>默认启动图形界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+<p>命令行界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ln -sf /lib/systemd/system/runlevel3.target /etc/systemd/system/default.target</span><br></pre></td></tr></table></figure>
+<p>命令行界面下，启动图形界面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># startx</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-远程连接工具"><a href="#1-远程连接工具" class="headerlink" title="1. 远程连接工具"></a>1. 远程连接工具</h2><p>windows 使用 Xshell<br>Linux 和 mac 使用 Terminal 即可</p>
+<h2 id="2-设置用户"><a href="#2-设置用户" class="headerlink" title="2. 设置用户"></a>2. 设置用户</h2><p>首先登录 root 账号</p>
+<p>新增用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd xiawei</span><br></pre></td></tr></table></figure>
+<p>修改用户密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd 新密码</span><br></pre></td></tr></table></figure>
+<p>添加 sudo 权限<br>通过修改 /etc/sudoers</p>
+<p>必须使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visudo</span><br></pre></td></tr></table></figure>
+<p>找到 root  ALL=(ALL)   ALL<br>然后添加 xiawei ALL = (ALL)  ALL</p>
+<h2 id="3-准备工作"><a href="#3-准备工作" class="headerlink" title="3. 准备工作"></a>3. 准备工作</h2><p>源码目录：  <strong>~/source</strong><br>安装目录： <strong>/usr/local/soft</strong><br>网站目录： <strong>/usr/local/soft/web</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$mkdir source</span><br><span class="line">   $sudo mkdir /usr/local/soft</span><br><span class="line">   $sudo chown sxin:sxin /usr/local/soft/</span><br><span class="line">   $mkdir /usr/local/soft/web</span><br></pre></td></tr></table></figure>
+<p>我们从官网下载Httpd和Php的源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$wget -P ~/source/ http://cn2.php.net/distributions/php-7.1.5.tar.gz</span><br><span class="line"> $wget -P ~/source/ http://archive.apache.org/dist/httpd/httpd-2.4.25.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source</span><br><span class="line">$tar -zxvf php-7.1.5.tar.gz &amp;&amp; tar -zxvf httpd-2.4.25.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-安装Httpd-2-4"><a href="#4-安装Httpd-2-4" class="headerlink" title="4. 安装Httpd 2.4"></a>4. 安装Httpd 2.4</h2><p>Httpd Version 2.4 Compiling and Installing    <a target="_blank" rel="noopener" href="http://httpd.apache.org/docs/2.4/install.html">http://httpd.apache.org/docs/2.4/install.html</a></p>
+<h3 id="4-1-Requirements"><a href="#4-1-Requirements" class="headerlink" title="4.1 Requirements"></a>4.1 Requirements</h3><p>根据官网的文档。我们要先安装apr,apr-util和pcre</p>
+<p>下载apr,apr-util,pcre源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$wget -P ~/source/ http://archive.apache.org/dist/apr/apr-1.5.2.tar.gz</span><br><span class="line">$wget -P ~/source/ http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz</span><br><span class="line">$wget -P ~/source/ ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/ &amp;&amp; tar -zxvf apr-1.5.2.tar.gz &amp;&amp; tar -zxvf apr-util-1.5.4.tar.gz &amp;&amp; tar -zxvf pcre-8.39.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>编译安装apr</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/apr-1.5.2/</span><br><span class="line">$./configure --prefix=/usr/local/soft/apr</span><br><span class="line">$make</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+
+<p>编译安装apr-util</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/apr-util-1.5.4/</span><br><span class="line">$./configure --prefix=/usr/local/soft/apr-util --with-apr=/usr/local/soft/apr</span><br><span class="line">$make</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+
+<p>编译安装pcre</p>
+<blockquote>
+<p>如果安装时出错 configure: error: You need a C++ compiler for C++ support<br>解决:安装 yum install -y gcc gcc-c++</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/pcre-8.39/</span><br><span class="line">$./configure --prefix=/usr/local/soft/pcre</span><br><span class="line">$make</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-编译安装httpd"><a href="#4-2-编译安装httpd" class="headerlink" title="4.2 编译安装httpd"></a>4.2 编译安装httpd</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/httpd-2.4.25/</span><br><span class="line">$./configure --prefix=/usr/local/soft/httpd24 --with-apr=/usr/local/soft/apr --with-apr-util=/usr/local/soft/apr-util/ --with-pcre=/usr/local/soft/pcre --enable-so</span><br><span class="line">$make</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+<p>注:如果编译过程中 遇到  “Did not find pcre-config script at”等类似的错误 说明 pcre版本下载错了。 下的是PCRE2 要下载PCRE. 8.X是PCRE 10.X是PCRE2</p>
+<h2 id="5-安装PHP-7-1-5"><a href="#5-安装PHP-7-1-5" class="headerlink" title="5. 安装PHP 7.1.5"></a>5. 安装PHP 7.1.5</h2><p>官方文档：<br>  <a target="_blank" rel="noopener" href="http://php.net/manual/en/install.unix.apache2.php">英文版</a><br>    <a target="_blank" rel="noopener" href="http://php.net/manual/zh/install.unix.php">中文版</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$cd ~/source/php-7.1.5</span><br><span class="line">$./configure --prefix=/usr/local/soft/php71 --with-config-file-path=/usr/local/soft/php71/conf --with-apxs2=/usr/local/soft/httpd24/bin/apxs</span><br><span class="line">$make</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+<p>注:如果编译过程中 遇到  “xml2-config not found. Please check your libxml2 installation”等类似的错误<br>请执行”sudo yum install libxml2 libxml2-devel -y”<br>编译过程中会遇到很多warning . 这个可以忽略。不过后面用过相关库会报错。 可以直接yum安装 也可以编译安装.和上面apr类似.也可以 用到了在安装扩展</p>
+<h2 id="6-配置"><a href="#6-配置" class="headerlink" title="6. 配置"></a>6. 配置</h2><h3 id="6-1-配置PHP（可选）"><a href="#6-1-配置PHP（可选）" class="headerlink" title="6.1 配置PHP（可选）"></a>6.1 配置PHP（可选）</h3><p>将 source php 文件夹里的配置文件拷贝</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$mkdir /usr/local/soft/php71/conf</span><br><span class="line">$cp php.ini-development /usr/local/soft/php71/conf/php.ini</span><br><span class="line">$vim /usr/local/soft/php71/conf/php.ini</span><br></pre></td></tr></table></figure>
+<p>定位到 include_path<br>输入/include_pah</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include_path = &quot;.:/usr/local/soft/php71/lib/php&quot;</span><br></pre></td></tr></table></figure>
+<p>(Esc :wq)</p>
+<h3 id="6-2-配置HTTP"><a href="#6-2-配置HTTP" class="headerlink" title="6.2 配置HTTP"></a>6.2 配置HTTP</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$vim /usr/local/soft/httpd24/conf/httpd.conf</span><br></pre></td></tr></table></figure>
+<p>整合PHP+HTTPD<br>定位到 LoadModule 附近[随便] (其实第一行 libphp7.so 已经有了)</p>
+<p>LoadModule php7_module modules/libphp7.so<br>AddType application/x-httpd-php .php<br>AddType application/x-httpd-php-source .phps 监听端口 (没用80端口，80端口留给ngigx转发. 因为如果服务器有tomcat和httpd共存的话就只能其中一个用80端口)<br>Listen 1024 配置虚拟主机<br>运行用户[xxx 当前登录用户] User xxx<br>Group xxx</p>
+<p>打开 Include conf/extra/httpd-vhosts.conf (最前面的#去掉)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$vim /usr/local/soft/httpd24/conf/extra/httpd-vhosts.conf</span><br><span class="line">$mkdir -p /usr/local/soft/web/lesson1</span><br></pre></td></tr></table></figure>
+<p>写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:1024&gt;</span><br><span class="line">DocumentRoot /usr/local/soft/web/lesson1</span><br><span class="line">ServerName localhost:1024</span><br><span class="line">DirectoryIndex index.html index.php</span><br><span class="line">&lt;Directory &quot;/usr/local/soft/web/lesson1&quot;&gt;</span><br><span class="line">Options FollowSymLinks</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="7-启动HTTPD"><a href="#7-启动HTTPD" class="headerlink" title="7. 启动HTTPD"></a>7. 启动HTTPD</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$/usr/local/soft/httpd24/bin/apachectl start</span><br></pre></td></tr></table></figure>
+<p>如果出现 “AH00558: httpd: Could not reliably determine the server”s fully qualified domain name, using 127.0.0.1. Set the “ServerName” directive globally to suppress this message”<br>等提示信息 可以直接忽略或者去配置文件 把ServerName写上</p>
+<p>通过 <code>ps -ef|grep httpd</code> 可以看服务是否启动成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$vim /usr/local/soft/web/lesson1/index.php</span><br><span class="line">&lt;?php echo &quot;hello jtthink&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>访问 localhost:1024/index.php 即可看到结果.</p>
+<h2 id="8-配置-阿里云-安全组设置，开放端口"><a href="#8-配置-阿里云-安全组设置，开放端口" class="headerlink" title="8. 配置 阿里云 安全组设置，开放端口"></a>8. 配置 阿里云 安全组设置，开放端口</h2><p>阿里云设有安全拦截，必须开发端口才可以访问<br><a target="_blank" rel="noopener" href="https://bbs.aliyun.com/read/320667.html?spm=0.0.0.0.c7jrks">阿里云文档</a></p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="http://www.itzgeek.com/how-tos/linux/centos-how-tos/install-gnome-gui-on-centos-7-rhel-7.html">Install Gnome GUI on CentOS 7 / RHEL 7 - ITzGeek</a><br><a target="_blank" rel="noopener" href="http://b.jtthink.com/read.php?tid=195">Centos72下PHP71+Httpd24的 环境搭建（一） </a><br><a target="_blank" rel="noopener" href="http://b.jtthink.com/read.php?tid=196">Centos72下PHP71+Httpd24的 环境搭建（二） </a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171111-set-environment-of-mac/" rel="bookmark">Mac 基本开发环境配置</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171114-set-git-hooks-to-update-server-code/" rel="bookmark">使用 git hook 实现服务器代码自动部署</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2018/20180103-atom-useful-packages/" rel="bookmark">Atom Packages（插件）推荐</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2018/20180124-php-primer-note/" rel="bookmark">php 学习笔记</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fa fa-tag"></i> 环境配置</a>
+              <a href="/tags/apache/" rel="tag"><i class="fa fa-tag"></i> apache</a>
+              <a href="/tags/centOS/" rel="tag"><i class="fa fa-tag"></i> centOS</a>
+              <a href="/tags/php/" rel="tag"><i class="fa fa-tag"></i> php</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/art/2017/20171114-set-git-hooks-to-update-server-code/" rel="prev" title="使用 git hook 实现服务器代码自动部署">
+                  <i class="fa fa-chevron-left"></i> 使用 git hook 实现服务器代码自动部署
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2017/20171205-vue-note/" rel="next" title="Vue 入门指南">
+                  Vue 入门指南 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>

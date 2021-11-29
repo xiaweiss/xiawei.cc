@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="自从看了李笑来的那篇博文后，尝试使用 atom 编辑器后，喜欢上了清爽的界面和可定制化的功能webstorm 很强大，但启动速度比较慢，对 markdown 的支持界面不是很友好sublime 也很方便，但大部分是深色主题，新手不自己安装插件几乎无法使用atom 不装插件也 ok 的，但为了有更好的体验，推荐一些自己在用的好用插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atom Packages（插件）推荐">
+<meta property="og:url" content="https://xiawei.cc/art/2018/20180103-atom-useful-packages/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="自从看了李笑来的那篇博文后，尝试使用 atom 编辑器后，喜欢上了清爽的界面和可定制化的功能webstorm 很强大，但启动速度比较慢，对 markdown 的支持界面不是很友好sublime 也很方便，但大部分是深色主题，新手不自己安装插件几乎无法使用atom 不装插件也 ok 的，但为了有更好的体验，推荐一些自己在用的好用插件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiawei.cc/images/20180103.jpg">
+<meta property="article:published_time" content="2018-01-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-31T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="环境配置">
+<meta property="article:tag" content="atom">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiawei.cc/images/20180103.jpg">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2018/20180103-atom-useful-packages/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2018/20180103-atom-useful-packages/","path":"art/2018/20180103-atom-useful-packages/","title":"Atom Packages（插件）推荐"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Atom Packages（插件）推荐 | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Atom-%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD%E5%90%8C%E6%AD%A5%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-text">Atom 设置备份同步（重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="nav-text">编辑器优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#minimap-%E7%BC%A9%E7%95%A5%E5%9B%BE%E6%BB%9A%E5%8A%A8%E6%9D%A1"><span class="nav-text">minimap 缩略图滚动条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="nav-text">git 版本控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-text">代码格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html%E3%80%81css%E3%80%81less-%E8%AF%AD%E6%B3%95%E6%94%AF%E6%8C%81"><span class="nav-text">html、css、less 语法支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown-%E6%94%AF%E6%8C%81"><span class="nav-text">markdown 支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue"><span class="nav-text">Vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React"><span class="nav-text">React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Native"><span class="nav-text">React Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-text">微信小程序</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2018/20180103-atom-useful-packages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Atom Packages（插件）推荐
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2018-08-01 00:00:00" itemprop="dateModified" datetime="2018-08-01T00:00:00+08:00">2018-08-01</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="https://xiawei.cc/images/20180103.jpg"></p>
+<blockquote>
+<p>自从看了李笑来的<a target="_blank" rel="noopener" href="http://lixiaolai.com/2016/06/17/makecs-atom-advanced">那篇博文</a>后，尝试使用 atom 编辑器后，喜欢上了清爽的界面和可定制化的功能<br>webstorm 很强大，但启动速度比较慢，对 markdown 的支持界面不是很友好<br>sublime 也很方便，但大部分是深色主题，新手不自己安装插件几乎无法使用<br>atom 不装插件也 ok 的，但为了有更好的体验，推荐一些自己在用的好用插件</p>
+</blockquote>
+<span id="more"></span>
+<p>注：目前涉及到的主要是前端相关的</p>
+<p>各插件的官方页面，统一使用 <a target="_blank" rel="noopener" href="https://atom.io/packages/%E6%8F%92%E4%BB%B6%E5%90%8D">https://atom.io/packages/插件名</a> 即可检索到<br>如果想安装全部的，可以使用 sync-settings 一键克隆我的配置<code>^_^</code></p>
+<h3 id="Atom-设置备份同步（重要）"><a href="#Atom-设置备份同步（重要）" class="headerlink" title="Atom 设置备份同步（重要）"></a>Atom 设置备份同步（重要）</h3><p>首先这个插件是最重要的，可以保存 atom 包含插件在内的所有配置</p>
+<p><a href="sync-settings">sync-settings</a></p>
+<p>数据时保存在 github 里的 gist 里的，首次使用时需要按<a target="_blank" rel="noopener" href="https://atom.io/packages/sync-settings">文档</a>的介绍配置插件里的 personal access token 和 gist id</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/settings/tokens/new">创建 personal access token</a>，权限必须勾选 <code>gist</code></li>
+<li>创建一个新的 <a target="_blank" rel="noopener" href="https://gist.github.com/">gist</a>，文件名 Filename 填写 package.json，描述和文件内容随意填点什么</li>
+<li>从右上角 copy 链接，其中的这段数字就是 <code>gist id</code></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://gist.github.com/xiaweiss/051f5e8f98d6836a5465fcb195fcae8b.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用时，按 <code>cmd + shift + p</code> 来打开 atom 的命令窗口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sync-settings:backup  备份</span><br><span class="line">sync-settings:restore 恢复</span><br><span class="line">sync-settings:view-backup 查看所有的备份，会打开 gist</span><br><span class="line">sync-settings:check-backup 本地设置和 gist 最新备份是否相同</span><br><span class="line">sync-settings:fork 输入 gist id 来 fork 他人的配置</span><br></pre></td></tr></table></figure>
+<p>我的是 gist id： <code>051f5e8f98d6836a5465fcb195fcae8b</code></p>
+<h3 id="编辑器优化"><a href="#编辑器优化" class="headerlink" title="编辑器优化"></a>编辑器优化</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/atom-clock">atom-clock</a></td>
+<td>显示时间</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/autosave-onchange">autosave-onchange</a></td>
+<td>自动保存</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/file-icons">file-icons</a></td>
+<td>按不同文件类型显示图标</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/highlight-selected">highlight-selected</a></td>
+<td>双击高亮显示所有这个单词出现的地方</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/js-hyperclick">js-hyperclick</a></td>
+<td>点击跳转到定义的位置</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/move-cursor-improved">move-cursor-improved</a></td>
+<td>光标移动的修正：有东亚字符（日语、汉字时），按上下箭头时使光标可以垂直移动</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/pigments">pigments</a></td>
+<td>显示色值的颜色</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/platformio-ide-terminal">platformio-ide-terminal</a></td>
+<td>编辑器内的命令行工具，但只能使用系统默认的 terminal</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/regex-railroad-diagram">regex-railroad-diagram</a></td>
+<td>使用图形显示正则表达式</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/sort-lines">sort-lines</a></td>
+<td>排序/删除重复行。选中要排序的区域，按 F5 即可</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/alibaba/structure-view">structure-view</a></td>
+<td>默使用 ctrl + O（字母） 文件结构</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/todo-show">todo-show</a></td>
+<td>可以在项目里找到特定的注释，TODO、NOTE、REVIEW 等等，使用快捷键 ctrl+shift+t 打开列表</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/tree-view-copy-relative-path">tree-view-copy-relative-path</a></td>
+<td>文件目录里复制的相对路径</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/tree-view-panes">tree-view-panes</a></td>
+<td>文件目录里显示打开的文件</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/tree-view-search-bar">tree-view-search-bar</a></td>
+<td>文件目录搜索栏</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/tree-view-sort">tree-view-sort</a></td>
+<td>排序文件目录，可以选择各种方式来排序左侧文件树</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/wordcount">wordcount</a></td>
+<td>字数统计</td>
+</tr>
+</tbody></table>
+<h3 id="minimap-缩略图滚动条"><a href="#minimap-缩略图滚动条" class="headerlink" title="minimap 缩略图滚动条"></a>minimap 缩略图滚动条</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/minimap">minimap</a></td>
+<td>类似 sublime 右侧代码缩略图的功能，好处是加宽了滚动条，适合拖拽</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/minimap-highlight-selected">minimap-highlight-selected</a></td>
+<td>高亮选中词</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/minimap-pigments">minimap-pigments</a></td>
+<td>显示色值的颜色</td>
+</tr>
+</tbody></table>
+<h3 id="git-版本控制"><a href="#git-版本控制" class="headerlink" title="git 版本控制"></a>git 版本控制</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/git-log">git-log</a></td>
+<td>查看整个项目的分支树</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/git-time-machine">git-time-machine</a></td>
+<td>查看对比当前文件的历史版本，使用 alt+t 打开面板</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/split-diff">split-diff</a></td>
+<td>显示修改的地方，并且可以对比，甚至选择其中一方</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://atom.io/packages/split-diff">split-diff</a> 使用 ctrl+alt+t 开启对比<br>ctrl-alt-n 跳转到下一处（next）<br>ctrl-alt-p 跳转到上一处（prev）<br>ctrl-alt-. 把左边的应用到右边去（&gt; 取左边）<br>ctrl-alt-, 把右边的应用到左边来（&lt; 取右边）</p>
+<h3 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h3><p>配置请见 <a target="_blank" rel="noopener" href="http://xiaweiss.com/art/20180726-javascript-code-format/">JavaScript 代码格式化</a></p>
+<table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/editorconfig">editorconfig</a></td>
+<td>统一编辑器格式</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/linter-eslint">linter-eslint</a></td>
+<td>eslint 代码检查、格式化</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/linter-js-standard">linter-js-standard</a></td>
+<td>standard 代码检查</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/prettier-atom">prettier-atom</a></td>
+<td>prettier 格式化</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/standard-formatter">standard-formatter</a></td>
+<td>standard 格式化</td>
+</tr>
+</tbody></table>
+<h3 id="html、css、less-语法支持"><a href="#html、css、less-语法支持" class="headerlink" title="html、css、less 语法支持"></a>html、css、less 语法支持</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/autoclose-html">autoclose-html</a></td>
+<td>输入 <code>&gt;</code> 时补全标签</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/less-compiler">less-compiler</a></td>
+<td>只需要在 less 文件开头加一行注释，保存时就会自动编译为新文件</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/px-rem-tooltip">px-rem-tooltip</a></td>
+<td>查看转换前的单位</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/px2rem-plus">px2rem-plus</a></td>
+<td>px转rem</td>
+</tr>
+</tbody></table>
+<h3 id="markdown-支持"><a href="#markdown-支持" class="headerlink" title="markdown 支持"></a>markdown 支持</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[markdown-table-editor][]</td>
+<td>使用 Tab 键自动格式化表格格式，使用户可以在源文件里清晰看到表格</td>
+</tr>
+<tr>
+<td>[markdown-preview-enhanced][]</td>
+<td>最好的 markdown 插件，使用前请关闭 markdown-preview</td>
+</tr>
+<tr>
+<td>[markdown-preview-enhanced]: <a target="_blank" rel="noopener" href="https://atom.io/packages/markdown-preview-enhanced">https://atom.io/packages/markdown-preview-enhanced</a></td>
+<td></td>
+</tr>
+<tr>
+<td>[markdown-table-editor]: <a target="_blank" rel="noopener" href="https://atom.io/packages/markdown-table-editor">https://atom.io/packages/markdown-table-editor</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/language-vue">language-vue</a></td>
+<td>语法支持</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/vue2-autocomplete">vue2-autocomplete</a></td>
+<td>自动补全</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/vuejs2-snippets">vuejs2-snippets</a></td>
+<td>自动补全</td>
+</tr>
+</tbody></table>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/language-babel">language-babel</a></td>
+<td>支持 JSX、ES201x、Flow、GraphQL 语法等</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/react-snippets">react-snippets</a></td>
+<td>自动补全</td>
+</tr>
+</tbody></table>
+<p>注意不要使用插件 <a target="_blank" rel="noopener" href="https://atom.io/packages/react-snippets">react</a> ，因为它和 <a target="_blank" rel="noopener" href="https://atom.io/packages/language-babel">language-babel</a> 冲突，而后者支持的范围更广</p>
+<h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/atom-react-native-style">atom-react-native-style</a></td>
+<td>样式辅助</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/language-babel">language-babel</a></td>
+<td>支持 JSX、ES201x、Flow、GraphQL 语法等</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/react-native-components">react-native-components</a></td>
+<td>组件辅助</td>
+</tr>
+</tbody></table>
+<p>不推荐 facebook 官方的 <a target="_blank" rel="noopener" href="https://atom.io/packages/nuclide">nuclide</a>，因为它会改变整个 atom 编辑器的界面，并且和语法检查的 lint 工具冲突<br>不利于其他项目和语言的代码编写</p>
+<h3 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h3><table>
+<thead>
+<tr>
+<th>package</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/atom-wx">atom-wx</a></td>
+<td>语法高亮</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://atom.io/packages/wxapp">wxapp</a></td>
+<td>微信小程序自动补全</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>图片来源：<a target="_blank" rel="noopener" href="https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=63967458">https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=63967458</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171111-set-environment-of-mac/" rel="bookmark">Mac 基本开发环境配置</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171114-set-git-hooks-to-update-server-code/" rel="bookmark">使用 git hook 实现服务器代码自动部署</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171115-install-php-and-apache-on-centos7/" rel="bookmark">在centOS7 编译安装 php、apache</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fa fa-tag"></i> 环境配置</a>
+              <a href="/tags/atom/" rel="tag"><i class="fa fa-tag"></i> atom</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/art/2018/20180101-fontend-baseinfo/" rel="prev" title="前端基础知识">
+                  <i class="fa fa-chevron-left"></i> 前端基础知识
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2018/20180108-videojs/" rel="next" title="h5 视频解决方案 videojs">
+                  h5 视频解决方案 videojs <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>

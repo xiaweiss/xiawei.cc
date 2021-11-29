@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+  <title>Aliplayer Functions</title>
+  <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.8/skins/default/aliplayer-min.css" />
+  <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.8/aliplayer-min.js"></script>
+  <style>
+    ::cue {
+      color: skyblue;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+<div id="player-con"></div>
+<script>
+  var player = new Aliplayer({
+    id: "player-con",
+    source: "https://media001.geekbang.org/2c36cccfb51c4c81890730b82a3659dc/2cc79eaba8e14adbab8c1aa7dd855180-8fbaf847ccb9c841086a4c667cdb8633-ld.m3u8",
+    // source: "master.m3u8",
+    // source: "playlist.m3u8",
+    width: "100%",
+    height: "500px",
+    cover: 'https://img.alicdn.com/tps/TB1EXIhOFXXXXcIaXXXXXXXXXXX-760-340.jpg',
+    /* To set an album art, you must set 'autoplay' and 'preload' to 'false' */
+    autoplay: false,
+    preload: false,
+    isLive: false
+  }, function (player) {
+    console.log("The player is created");
+  });
+
+  player.on('ready', function (e) {
+    var videoElement = player.tag
+
+    var trackElement = document.createElement('track')
+    trackElement.label = 'Chinese'
+    trackElement.kind = 'subtitles'
+    trackElement.srclang = 'cn'
+    trackElement.src = 'cc.vtt'
+    trackElement.default = true
+    videoElement.appendChild(trackElement)
+  })
+</script>
+</body>
+</html>

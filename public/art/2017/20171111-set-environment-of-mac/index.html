@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="因为自己喜欢苹果产品的体验，还有可以提高工作效率作为一只单身汪，下决心买了 Mac Air用了几天里的零碎时间，配好了环境，分享过程给大家">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 基本开发环境配置">
+<meta property="og:url" content="https://xiawei.cc/art/2017/20171111-set-environment-of-mac/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="因为自己喜欢苹果产品的体验，还有可以提高工作效率作为一只单身汪，下决心买了 Mac Air用了几天里的零碎时间，配好了环境，分享过程给大家">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-11-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-01-27T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="mac">
+<meta property="article:tag" content="环境配置">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2017/20171111-set-environment-of-mac/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2017/20171111-set-environment-of-mac/","path":"art/2017/20171111-set-environment-of-mac/","title":"Mac 基本开发环境配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mac 基本开发环境配置 | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%AC%A6%E5%8F%B7"><span class="nav-text">1. 快捷键符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E8%AE%BE%E7%BD%AE"><span class="nav-text">2. 中文输入法设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%91%BD%E4%BB%A4%E8%A1%8C%EF%BC%88Terminal-iTerm%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="nav-text">3. 命令行（Terminal&#x2F;iTerm的基本设置）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">4. 命令行的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-text">5. 安装必要开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-Xcode-Command-Line-Tool"><span class="nav-text">5.1 Xcode Command Line Tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E5%90%8C%E6%84%8F-xcode-%E8%AE%B8%E5%8F%AF"><span class="nav-text">5.2 同意 xcode 许可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E5%AE%89%E8%A3%85-Homebrew"><span class="nav-text">5.3 安装 Homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E5%AE%89%E8%A3%85-Git"><span class="nav-text">5.4 安装 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E5%AE%89%E8%A3%85-rvm-%E4%B8%8E-Ruby-2-3-1"><span class="nav-text">5.5 安装 rvm 与 Ruby 2.3.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-%E5%AE%89%E8%A3%85-nvm-%E5%92%8C-node-%E9%95%BF%E6%9C%9F%E6%94%AF%E6%8C%81%E7%89%88%E6%9C%AC"><span class="nav-text">5.6 安装 nvm 和 node 长期支持版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4"><span class="nav-text">5.7 设置自己的快捷命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-8-%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-text">5.8 修改主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-9-%E8%AE%BE%E7%BD%AE%E5%90%8C%E6%AD%A5%E7%9B%98%EF%BC%88%E8%BD%AF%E9%93%BE%E6%8E%A5%E3%80%81%E7%A1%AC%E9%93%BE%E6%8E%A5%EF%BC%89"><span class="nav-text">5.9 设置同步盘（软链接、硬链接）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-10-%E6%98%BE%E7%A4%BA%E4%BB%BB%E4%BD%95%E6%9D%A5%E6%BA%90%E9%80%89%E9%A1%B9"><span class="nav-text">5.10 显示任何来源选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E9%80%89%E8%A3%85"><span class="nav-text">6. 选装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-redis"><span class="nav-text">6.1 redis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD-redis"><span class="nav-text">卸载 redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B-redis"><span class="nav-text">查看 redis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fin"><span class="nav-text">fin</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2017/20171111-set-environment-of-mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mac 基本开发环境配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-01-28 00:00:00" itemprop="dateModified" datetime="2019-01-28T00:00:00+08:00">2019-01-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>因为自己喜欢苹果产品的体验，还有可以提高工作效率<br>作为一只单身汪，下决心买了 Mac Air<br>用了几天里的零碎时间，配好了环境，分享过程给大家</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="1-快捷键符号"><a href="#1-快捷键符号" class="headerlink" title="1. 快捷键符号"></a>1. 快捷键符号</h2><p>⌃ Control<br>⌥ alt/option<br>⌘ command<br>⇧ shift<br>⇪ caps lock</p>
+<h2 id="2-中文输入法设置"><a href="#2-中文输入法设置" class="headerlink" title="2. 中文输入法设置"></a>2. 中文输入法设置</h2><p>设置Spotlight 的快捷键与更换输入法的快捷键，不要占用<code>Control</code>键<code>^</code><br>在<code>System Preferences &gt; Keyboard &gt; Shortcuts</code>里设置</p>
+<p>把 Spotlight 设置为 <code>⌥Space</code>，把更换输入法设置为 <code>⌘Space</code>；而 Spotlight 中，Show Finder Search Window 不使用快捷键；Input Sources 中，Select next source in Input menu 不使用快捷键</p>
+<h2 id="3-命令行（Terminal-iTerm的基本设置）"><a href="#3-命令行（Terminal-iTerm的基本设置）" class="headerlink" title="3. 命令行（Terminal/iTerm的基本设置）"></a>3. 命令行（Terminal/iTerm的基本设置）</h2><p>请逐次拷贝粘贴以下命令行，而后再按回车键执行<br>(1)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<p>(2)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://raw.githubusercontent.com/donnemartin/dev-setup/master/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>(3)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://raw.githubusercontent.com/donnemartin/dev-setup/master/.bash_prompt</span><br></pre></td></tr></table></figure>
+<p>(4)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -O https://raw.githubusercontent.com/donnemartin/dev-setup/master/.aliases</span><br></pre></td></tr></table></figure>
+<p>全部完成之后，重启 Terminal（就是关掉退出之后，再重新打开）。刚才的命令完成了很多事情，只不过现在你搞不懂，你能看到的就是命令行提示变得花花绿绿了，各种颜色有不同的意义。(实际上，相当于把大牛写好的配置文件存到了本地，来自<a target="_blank" rel="noopener" href="https://github.com/donnemartin/dev-setup">donnemartin/dev-setup</a>)</p>
+<p>接下来，要为 Terminal 换个皮肤<br><a target="_blank" rel="noopener" href="https://github.com/tomislav/osx-terminal.app-colors-solarized">Solarized</a><br><a target="_blank" rel="noopener" href="https://github.com/wtanna/Spacegray-OSX-Terminal-Theme">Spacegray</a><br>点 Clone and Download 下载到 <code>Spacegray.terminal</code> 文件，打开 terminal ，在工具栏打开偏好设置（快捷键<code>⌘,</code>）,打开Profiles，点下面小齿轮，点导入，选择文件 <code>Spacegray.terminal</code>，最后设置为默认</p>
+<p> references &gt; Profiles &gt; Spacegray &gt; Text &gt; Font 可以设置字体大小</p>
+<blockquote>
+<p>还有，Mac OSX 其实还有很多快捷键可以设置，其中一个比较重要的是 New Terminal at Folder，在System Preferences &gt; Keyboard &gt; Shortcuts &gt; Services &gt; Files and Folders 里可以找到。我把它设置成了 ⌃⌥⌘T，以后在 Finder 里，用鼠标选中某个文件夹（或称“目录”），然后按 ⌃⌥⌘T，就可以呼出 Terminal 并且将工作目录转至这个文件夹内…… 很方便  </p>
+</blockquote>
+<p>PS: 这个设置快捷键的方法，并没有起作用，日后研究。</p>
+<p>有三个 Mac OSX 系统自带的东西，工程师们会觉得不够用，进而造出更好的东西来替代，它们分别是：</p>
+<ul>
+<li>Terminal → <a target="_blank" rel="noopener" href="https://www.iterm2.com/">iTerm</a>  <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/27447370">iterm2有什么酷功能？ - 知乎</a></li>
+<li>Finder → <a target="_blank" rel="noopener" href="https://totalfinder.binaryage.com/">TotalFinder is a better Finder</a> / <a target="_blank" rel="noopener" href="https://cocoatech.com/">Path Finder</a></li>
+<li>Spotlight → <a target="_blank" rel="noopener" href="https://qsapp.com/">QuickSilver</a> / <a target="_blank" rel="noopener" href="https://www.alfredapp.com/">Alfred</a></li>
+</ul>
+<p>下载 iTerm 之后，要为它更换皮肤，设置字体，设置字体大小……<br>iTerm 的颜色主题 <a target="_blank" rel="noopener" href="https://github.com/christianbundy/spacegrey-iterm">iTerm Spacegray</a></p>
+<p>字体推荐 Menlo</p>
+<h2 id="4-命令行的使用"><a href="#4-命令行的使用" class="headerlink" title="4. 命令行的使用"></a>4. 命令行的使用</h2><p>常用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls #罗列当前目录下的内容</span><br><span class="line">cd #更换工作目录</span><br><span class="line">pwd #现实当前完整工作目录</span><br><span class="line">touch #创建一个文件</span><br><span class="line">mv #移动/更名文件或目录</span><br><span class="line">rm #删除文件活目录</span><br><span class="line">nano #使用 nano 编辑纯文本文件</span><br><span class="line">open #打开一个文件，就好像你在 Finder 里双击那个文件图标一样</span><br><span class="line">clear #清空屏幕</span><br><span class="line">sudo #用管理员身份去执行一个命令</span><br></pre></td></tr></table></figure>
+
+<p>学习快捷键的好去处:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/0nn0/terminal-mac-cheatsheet">https://github.com/0nn0/terminal-mac-cheatsheet</a>  </p>
+</blockquote>
+<h2 id="5-安装必要开发环境"><a href="#5-安装必要开发环境" class="headerlink" title="5. 安装必要开发环境"></a>5. 安装必要开发环境</h2><h3 id="5-1-Xcode-Command-Line-Tool"><a href="#5-1-Xcode-Command-Line-Tool" class="headerlink" title="5.1 Xcode Command Line Tool"></a>5.1 Xcode Command Line Tool</h3><p>首先 在Terminal里敲命令时，系统会出来个提示框 要求安装 command line tools，点击安装即可<br>不需要安装 Xcode。</p>
+<p>过去安装这个东西费劲死了，在需要翻山越岭的情况下下载两个多 G 的东西，唉…… Mac OSX EI Capitan 之后，终于可以在命令行工具（Terminal）下这样安装了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-同意-xcode-许可"><a href="#5-2-同意-xcode-许可" class="headerlink" title="5.2 同意 xcode 许可"></a>5.2 同意 xcode 许可</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xcodebuild -license</span><br></pre></td></tr></table></figure>
+<p>输入 开机密码<br>反复按 <code>Space</code>翻页<br>然后输入 <code>agree</code> 按回车键 ⏎</p>
+<h3 id="5-3-安装-Homebrew"><a href="#5-3-安装-Homebrew" class="headerlink" title="5.3 安装 Homebrew"></a>5.3 安装 Homebrew</h3><p>命令行工具中拷贝粘贴以下代码，而后按回车键 ⏎</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<p>随后再次在命令行工具中拷贝粘贴以下代码，而后按回车键 ⏎</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;export PATH=&quot;/usr/local/bin:$PATH&quot;&#x27; &gt;&gt; ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4-安装-Git"><a href="#5-4-安装-Git" class="headerlink" title="5.4 安装 Git"></a>5.4 安装 Git</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<p>配置 git 按 tab 补全功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash</span><br><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>按 i 键（注意不要使用中文出入法），将这行代码粘贴进去</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test -f ~/.git-completion.bash &amp;&amp; . $_</span><br></pre></td></tr></table></figure>
+<p>按 <code>esc</code> 键，再按 <code>：</code>，然后输入 <code>wq</code> 按回车键 ⏎</p>
+<h3 id="5-5-安装-rvm-与-Ruby-2-3-1"><a href="#5-5-安装-rvm-与-Ruby-2-3-1" class="headerlink" title="5.5 安装 rvm 与 Ruby 2.3.1"></a>5.5 安装 rvm 与 Ruby 2.3.1</h3><p>注意，以下是三行命令，要分别输入，每行都要按接回车键（⏎）执行。以后为了书写方便，经常会把一系列命令放到一个代码块中……</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br><span class="line">rvm install 2.3.1</span><br><span class="line">rvm use 2.3.1</span><br></pre></td></tr></table></figure>
+
+<p>如果以上命令安装失败，可以按<a target="_blank" rel="noopener" href="https://rvm.io/">官网</a>方式安装：<br>先创建文件夹 include（为了以免安装gpg时<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14527521/brew-doctor-says-warning-usr-local-include-isnt-writable">报错</a>）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /usr/local/include</span><br><span class="line">sudo chown -R $USER:admin /usr/local/include</span><br></pre></td></tr></table></figure>
+<p>安装 gpg</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gnupg gnupg2</span><br></pre></td></tr></table></figure>
+<p>安装 rvm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</span><br><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+
+<p>最后根据安装后的提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>按 i 键（注意不要使用中文出入法），将<code>source ~/.profile</code>粘贴为单独的一行<br>按 <code>esc</code> 键，再按 <code>：</code>，然后输入 <code>wq</code> 按回车键 ⏎</p>
+<p>rvm 是 Ruby 的版本管理工具，其作用是在系统中安装若干个不同版本的 Ruby，且不让它们之间发生冲突。你可以安装很多个版本的 Ruby，比如，刚刚安装了 2.3.1，随后你还可以安装 1.9.2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install 1.9.2</span><br></pre></td></tr></table></figure>
+<p>需要使用 1.9.2 版本的 Ruby 的时候，就可以用这个命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.9.2</span><br></pre></td></tr></table></figure>
+<p>也可以随时用这个命令切换回 2.3.1</p>
+<p>你也随时可以用这个命令查看自己都安装过哪些版本：</p>
+<p>想要卸载哪个版本的 Ruby，你就用这样的命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm uninstall 1.9.2</span><br></pre></td></tr></table></figure>
+<p>下面要接着安装的 nvm，跟 rvm 一个原理，只不过 nvm 是 nodejs 的版本管理器</p>
+<h3 id="5-6-安装-nvm-和-node-长期支持版本"><a href="#5-6-安装-nvm-和-node-长期支持版本" class="headerlink" title="5.6 安装 nvm 和 node 长期支持版本"></a>5.6 安装 nvm 和 node 长期支持版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nvm</span><br></pre></td></tr></table></figure>
+<p>这时会有提示，按提示执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.nvm</span><br><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>按 i 键，将这两行代码粘贴进去</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</span><br><span class="line">  . &quot;/usr/local/opt/nvm/nvm.sh&quot;</span><br></pre></td></tr></table></figure>
+<p>按 <code>esc</code> 键，再按 <code>：</code>，然后输入 <code>wq</code> 按回车键 ⏎<br>关闭 Terminal / iTerm，重新打开</p>
+<p>nodejs 有两个版本，一个叫 LTS（Long Term Support，提供长期支持的稳定版），一个叫 Current（提供最新功能的当下版，通常也不够稳定，尚需改进）。新手建议使用 LTS。<br>使用下面命令来安装最新的LTS版</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
+<p>也可以安装指定的版本号，写此文时LTS最新版是8.9.0，也可以这样安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install 8.9.0</span><br></pre></td></tr></table></figure>
+<p>然后启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use 8.9.0</span><br></pre></td></tr></table></figure>
+
+<p>升级 nvm 版本</p>
+<p>使用 brew 安装的，使用 <code>brew upgrade nvm</code> 命令</p>
+<p>其他情况使用命令 <a target="_blank" rel="noopener" href="https://github.com/creationix/nvm/issues/127">issue</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.nvm &amp;&amp; git pull &amp;&amp; git checkout `git describe --abbrev=0 --tags`</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-7-设置自己的快捷命令"><a href="#5-7-设置自己的快捷命令" class="headerlink" title="5.7 设置自己的快捷命令"></a>5.7 设置自己的快捷命令</h3><p>Terminal/iTerm 里经常用到但较长的命令，可以通过别名alias的方式来缩写</p>
+<p>比如 <code>git checkout master</code>, 设置后可以缩写为<code>gco master</code><br>接下来是具体设置方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">vim .aliases</span><br></pre></td></tr></table></figure>
+<p>按 <code>i</code>键进入编辑模式，粘贴下列代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias hs=&quot;hexo g &amp;&amp; hexo s&quot;</span><br><span class="line">alias hd=&quot;hexo g &amp;&amp; hexo d&quot;</span><br><span class="line"></span><br><span class="line">alias nr=&quot;npm run&quot;</span><br></pre></td></tr></table></figure>
+<p>按 <code>esc</code> 键，再按 <code>：</code>，然后输入 <code>wq</code> 按回车键 ⏎<br>关闭 Terminal/iTerm，重新打开就可以使用这些简写了。</p>
+<p>当然，你也可以根据自己的喜好来设置。不过不建议设置太多短命令，以免造成记忆负担。</p>
+<p>而 git 快捷命令要在 git 全局配置文件里设置(否则会导致自动补全失效)，可以编辑 <code>~/.gitconfig</code> 文件，也可以使用命令来配置，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.ll &quot;log -1 HEAD&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-8-修改主机名"><a href="#5-8-修改主机名" class="headerlink" title="5.8 修改主机名"></a>5.8 修改主机名</h3><p>终端 Terminal/iTerm 里，显示的“主机名”就是 HostName，也就是主机真正的名称<br>查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $HOSTNAME</span><br></pre></td></tr></table></figure>
+<p>修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo scutil --set HostName 新的主机名</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-9-设置同步盘（软链接、硬链接）"><a href="#5-9-设置同步盘（软链接、硬链接）" class="headerlink" title="5.9 设置同步盘（软链接、硬链接）"></a>5.9 设置同步盘（软链接、硬链接）</h3><p>为了数据安全，以及便于存储传输，常常会用到第三方的同步盘，比如腾讯微云</p>
+<p>而问题是同步盘只能同步一个文件夹，而我们的数据是散落在多个文件夹里的</p>
+<p>还有一个场景是，使用 hexo 时，修改了子仓库某个文件（比如 next 主题里的配置文件），但不想把子仓库一起打包进自己仓库里</p>
+<p>这时，可以使用 软连接或硬链接来处理</p>
+<p>所谓的软连接，类似于 windows 中的快捷方式，不同的是，这个文件是有数据的，它的数据始终与它指向的原文件一致。<br>假设同步盘目录是 <code>~/Cloud</code><br>要把<code>~/Project</code>目录下的 <code>xiaweiss</code> 文件夹加入同步盘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Project</span><br><span class="line">ln -s xiawess/ /Users/$USER/Cloud/xiaweiss</span><br></pre></td></tr></table></figure>
+<p>语法是 <code>ln -s 原目录/原文件 目标目录/目标文件</code></p>
+<p>-s 表示符号链接（软链接），注意目标建议绝对路径，因为目标文件移动后，可能会找不到原文件而失效。</p>
+<p>软连接有点像分身，如果本体被干掉，分身也就不起作用了。</p>
+<p>硬链接 没有-s 参数，语法为 <code>ln 原文件 目标文件</code>，可以写相对路径。</p>
+<p>硬链接像一个本体分裂成了好多个，每一个都是本体，修改一个，相当于把每个都修改了。只有把所有的都删除了，才会真正被消灭。</p>
+<p>二者区别主要是：硬链接不可以链接目录，软连接可以；硬链接文件可以拷贝出去使用，挪了位置也可以用，软连接不可以。</p>
+<p>使用软连接、硬链接，看起来文件增多了，但并不会增加磁盘存储量。</p>
+<h3 id="5-10-显示任何来源选项"><a href="#5-10-显示任何来源选项" class="headerlink" title="5.10 显示任何来源选项"></a>5.10 显示任何来源选项</h3><p>macOS Sierra系统隐私里默认不显示“任何来源”选项，这是一种增强型保护机制。<br>显示“任何来源”选项，在控制台中执行：<br><code>sudo spctl --master-disable</code><br>不显示“任何来源”选项，在控制台中执行：<br><code>sudo spctl --master-enable</code></p>
+<h2 id="6-选装"><a href="#6-选装" class="headerlink" title="6. 选装"></a>6. 选装</h2><h3 id="6-1-redis"><a href="#6-1-redis" class="headerlink" title="6.1 redis"></a>6.1 redis</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br></pre></td></tr></table></figure>
+
+<p>安装好后，会看到如下提示语：</p>
+<p>To have launchd start redis now and restart at login:<br>  brew services start redis<br>Or, if you don’t want/need a background service you can just run:<br>  redis-server /usr/local/etc/redis.conf</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>也即是说官方提供两种启动方式：</p>
+<p><strong>1. 常驻服务</strong> 重启电脑后 redis 依然在运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew services list //查看服务列表</span><br><span class="line">brew services start redis //启动 redis 服务</span><br><span class="line">brew services restart redis //重启 redis</span><br><span class="line">brew services stop redis //停止 redis</span><br></pre></td></tr></table></figure>
+
+<p>常驻服务还有一种启动方式是使用 <code>launchctl</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents //注册到启动项里</span><br><span class="line">launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist //启动 redis 服务</span><br><span class="line">launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist //停止 redis</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 不需要后台服务，从配置文件启动</strong> 重启或关闭 Terminal 服务会停止</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server /usr/local/etc/redis.conf</span><br></pre></td></tr></table></figure>
+
+<pre><code>启动后可以看到界面，退出的话，同时按下 control键 c键 即可
+</code></pre>
+<h4 id="卸载-redis"><a href="#卸载-redis" class="headerlink" title="卸载 redis"></a>卸载 redis</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall redis</span><br><span class="line">rm ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看-redis"><a href="#查看-redis" class="headerlink" title="查看 redis"></a>查看 redis</h4><p>查看 redis 信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info redis</span><br></pre></td></tr></table></figure>
+
+<p>测试 redis 是否在运行，如果看到 <code>PONG</code> 说明正常运行中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli ping</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="fin"><a href="#fin" class="headerlink" title="fin"></a>fin</h2><p>如此这般，最基础的开发环境算是完成了，随着使用的深入，还会逐渐补充完善。</p>
+<p>关于更详细的开发环境设置，请参阅这两个 Github 项目：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/nicolashery/mac-dev-setup">nicolashery/mac-dev-setup</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/donnemartin/dev-setup">donnemartin/dev-setup</a></li>
+</ul>
+<p>ChangeLog</p>
+<p>20190128 添加 5.6 升级 nvm 版本方法</p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="http://lixiaolai.com/2016/06/16/makecs-basic-dev-env-settup/">李笑来《基本开发环境设置》</a><br><a target="_blank" rel="noopener" href="http://xiaosheng.me/2015/08/23/article5/">Mac修改主机名和计算机名 - 小昇的博客 | Xs Blog</a><br><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/32356677bdb5">在Mac下Git使用对于Tab键自动补全功能设置</a><br><a target="_blank" rel="noopener" href="https://apple.stackexchange.com/questions/55875/git-auto-complete-for-branches-at-the-command-line">Terminal-git auto-complete</a><br><a target="_blank" rel="noopener" href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html">理解 Linux 的硬链接与软链接</a><br><a target="_blank" rel="noopener" href="https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298">Install and config Redis on Mac OS X via Homebrew</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2018/20180724-install-totalfinder/" rel="bookmark">Mac 文件管理利器 TotalFinder 安装教程</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171114-set-git-hooks-to-update-server-code/" rel="bookmark">使用 git hook 实现服务器代码自动部署</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2017/20171115-install-php-and-apache-on-centos7/" rel="bookmark">在centOS7 编译安装 php、apache</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/art/2018/20180103-atom-useful-packages/" rel="bookmark">Atom Packages（插件）推荐</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"><i class="fa fa-tag"></i> mac</a>
+              <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fa fa-tag"></i> 环境配置</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/art/2017/20171008-build-a-blog-with-hexo-on-github/" rel="prev" title="Hexo 博客搭建、进阶配置指南">
+                  <i class="fa fa-chevron-left"></i> Hexo 博客搭建、进阶配置指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2017/20171114-set-git-hooks-to-update-server-code/" rel="next" title="使用 git hook 实现服务器代码自动部署">
+                  使用 git hook 实现服务器代码自动部署 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="正在学习 Swift 中，简要的笔记~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 指南学习笔记">
+<meta property="og:url" content="https://xiawei.cc/art/2018/20181225-swift-language-guide/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="正在学习 Swift 中，简要的笔记~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiawei.cc/images/20181225.jpg">
+<meta property="og:image" content="https://xiawei.cc/images/20181225-collection-types-intro.png">
+<meta property="og:image" content="https://xiawei.cc/images/20181225-set-venn-diagram.png">
+<meta property="article:published_time" content="2018-12-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-02-12T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiawei.cc/images/20181225.jpg">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2018/20181225-swift-language-guide/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2018/20181225-swift-language-guide/","path":"art/2018/20181225-swift-language-guide/","title":"Swift 指南学习笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Swift 指南学习笔记 | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9"><span class="nav-text">基础内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E8%BE%93%E5%87%BA"><span class="nav-text">调试输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-%E8%AF%AD%E5%8F%A5%E5%8F%8A%E5%BC%BA%E5%88%B6%E5%B1%95%E5%BC%80"><span class="nav-text">if 语句及强制展开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">基本运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">算术运算符 + - * &#x2F; %  +&#x3D;  -&#x3D;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%87%8F%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6-Unary-Plus-Operator%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%8F%96%E5%88%B0%E8%B4%9F%E5%80%BC"><span class="nav-text">一元减号运算符 Unary Plus Operator，可以取到负值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E7%A9%BA%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6-Nil-Coalescing-Operator"><span class="nav-text">合并空值运算符 Nil-Coalescing Operator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E8%BF%90%E7%AE%97%E7%AC%A6-Range-Operators"><span class="nav-text">区间运算符 Range Operators</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-text">集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E9%9B%86"><span class="nav-text">合集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ChangeLog"><span class="nav-text">ChangeLog</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2018/20181225-swift-language-guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift 指南学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-02-13 00:00:00" itemprop="dateModified" datetime="2019-02-13T00:00:00+08:00">2019-02-13</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="https://xiawei.cc/images/20181225.jpg" alt="20181225"></p>
+<blockquote>
+<p>正在学习 Swift 中，简要的笔记~</p>
+</blockquote>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=41544976">封面图来源</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnswift.org/the-basics">中文翻译 Swift 指南</a>(需要科学上网)<br><a target="_blank" rel="noopener" href="https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html">官方文档 Swift Language Guide</a><br>推荐使用的划词翻译 Chrome 插件：<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/search/%E7%BF%BB%E8%AF%91%E4%BE%A0">翻译侠</a><br>如果官方版本有问题，请暂时使用这个 <a target="_blank" rel="noopener" href="https://github.com/magic-FE/translate-man/issues/60">替代版本</a></p>
+<h3 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ul>
+<li>Int      整数</li>
+<li>Double   浮点数 精度15位（不推荐 Float，精度6位）</li>
+<li>Bool     布尔值</li>
+<li>Tuples   元组, Tuples 不可以直接使用，语法例如(Int, String)</li>
+<li>nil      表示没有值</li>
+<li>Optional 可选类型，在类型后加上 ？表示。例如Int?，表示值可能为 nil，或者 Int 类型</li>
+<li>Array    数组</li>
+</ul>
+<p>TODO: 获取判断数据类型  type(of: date)</p>
+<h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4><p>所有转换都使用数据类型的函数来转换，即全部都为显式转换<br>例如字符串 Int(“32”)</p>
+<h4 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h4><p>var 声明变量<br>let 声明常量</p>
+<p>声明变量时必须指定默认值。<code>var foo: Int = 1</code><br>没有默认值时，也可以指定为可选类型。<code>var foo: Int?</code><br>赋值的情况下类型指定可以省略，系统会自动推断，按住 option 键点击变量，即可看到类型推断的结果</p>
+<h4 id="调试输出"><a href="#调试输出" class="headerlink" title="调试输出"></a>调试输出</h4><p>print(foo, bar)</p>
+<h4 id="if-语句及强制展开"><a href="#if-语句及强制展开" class="headerlink" title="if 语句及强制展开"></a>if 语句及强制展开</h4><p>给可选类型赋值时，得到的值仍然是可选类型<br>例如声明 <code>var foo: Int? = 1</code>, foo 的值为 <code>Optional(1)</code></p>
+<p>使用可选类型内部的值有以下几种方式</p>
+<ol>
+<li><p>确认变量有值时，使用 <code>!</code> 强制展开（Forced Unwrapping）</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> foo <span class="operator">!=</span> <span class="literal">nil</span> &#123;</span><br><span class="line">  foo<span class="operator">!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 if 语句自带的语法，进行可选项绑定（Optional Binding）<br>即如果 foo 内部的值不为 nil 时，它的内部的值会赋给 bar<br>变量 bar 只能在当前的 if 代码块内使用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> bar <span class="operator">=</span> foo &#123;</span><br><span class="line">  bar</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐式展开可选项 Implicitly Unwrapped Optionals<br>把 <code>!</code> 放在类型声明后了，语法更简洁，bar 值是 foo 变量内部的值 或者 nil</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let bar: Int! = foo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用 合并空值运算符 Nil-Coalescing Operator<br>如果 foo 内部有值，则返回内部值。如果 foo 内部值为 nil，则返回 <code>??</code> 后的默认值<br>默认值的类型必须与 foo 内置值类型相同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo ?? nil</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><p>函数可以把自身的错误传递出去，传递到调用函数的作用域</p>
+<p>通过 throws 来标记这种函数</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canThrowErrors</span>()</span> <span class="keyword">throws</span> -&gt; <span class="type">String</span></span><br></pre></td></tr></table></figure>
+
+<p>执行时，要求加上 try 标识符</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> canThrowErrors()</span><br></pre></td></tr></table></figure>
+
+<p>由于有可能抛出错误信息，所以需要对错误进行捕获处理<br>错误会默认在 error 变量里</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> canThrowErrors()</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>另外还有 try? 和 try! 可以使用</p>
+<p>使用 try? 错误时会得到值 nil</p>
+<p>以下的 x、y 的处理相同的</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x <span class="operator">=</span> <span class="keyword">try?</span> canThrowErrors()</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> y: <span class="type">Int</span>?</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    y <span class="operator">=</span> <span class="keyword">try</span> canThrowErrors()</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    y <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自己确保不会出错时，可以使用 try! 取消错误传递，例如加载本地图片时<br>但如果出错了，会报运行时错误</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> photo <span class="operator">=</span> <span class="keyword">try!</span> loadImage(<span class="string">&quot;./Resources/John Appleseed.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本运算符"><a href="#基本运算符" class="headerlink" title="基本运算符"></a>基本运算符</h3><h4 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符 + - * / %  +=  -="></a>算术运算符 + - * / %  +=  -=</h4><h4 id="一元减号运算符-Unary-Plus-Operator，可以取到负值"><a href="#一元减号运算符-Unary-Plus-Operator，可以取到负值" class="headerlink" title="一元减号运算符 Unary Plus Operator，可以取到负值"></a>一元减号运算符 Unary Plus Operator，可以取到负值</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"><span class="operator">-</span>foo <span class="comment">// -3</span></span><br><span class="line">foo <span class="operator">=</span> <span class="operator">-</span><span class="number">3</span></span><br><span class="line"><span class="operator">-</span>foo <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="合并空值运算符-Nil-Coalescing-Operator"><a href="#合并空值运算符-Nil-Coalescing-Operator" class="headerlink" title="合并空值运算符 Nil-Coalescing Operator"></a>合并空值运算符 Nil-Coalescing Operator</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a <span class="operator">??</span> b</span><br></pre></td></tr></table></figure>
+<p>如果可选项 a 有值则展开，如果没有值，是 nil ，则返回默认值 b 。表达式 a 必须是一个可选类型。表达式 b 必须与 a 的储存类型相同。</p>
+<h4 id="区间运算符-Range-Operators"><a href="#区间运算符-Range-Operators" class="headerlink" title="区间运算符 Range Operators"></a>区间运算符 Range Operators</h4><p>闭区间 ClosedRange 例如 <code>1...5</code> 1,2,3,4,5<br>半开区间 Range 例如 <code>0..&lt;5</code>  0,1,2,3,4</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>isEmpty 判断是否为空<br>字符串插值</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> multiplier <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> message <span class="operator">=</span> <span class="string">&quot;<span class="subst">\(multiplier)</span> times 2.5 is <span class="subst">\(Double(multiplier) <span class="operator">*</span> <span class="number">2.5</span>)</span>&quot;</span></span><br><span class="line"><span class="comment">// message is &quot;3 times 2.5 is 7.5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h3><p><img data-src="https://xiawei.cc/images/20181225-collection-types-intro.png" alt="CollectionTypes_intro_2x"><br>数组 Array<br>集合 Set<br>字典 Dictionary</p>
+<p>某个集合类型声明后，它内部所有值都是相同的类型</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>Array<Element> 或 [Element], 启动 Element 是内部元素的类型</p>
+<p>声明数组</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="operator">=</span> <span class="type">Array</span>&lt;<span class="type">Int</span>&gt;() <span class="comment">// 空数组 []</span></span><br><span class="line"><span class="keyword">var</span> b <span class="operator">=</span> [<span class="type">Int</span>]()      <span class="comment">// 空数组 []</span></span><br><span class="line"><span class="keyword">var</span> c <span class="operator">=</span> <span class="type">Array</span>(repeating: <span class="number">0.0</span>, count: <span class="number">3</span>) <span class="comment">// [0.0, 0.0, 0.0]</span></span><br><span class="line"><span class="keyword">var</span> shoppingList: [<span class="type">String</span>] <span class="operator">=</span> [<span class="string">&quot;Eggs&quot;</span>, <span class="string">&quot;Milk&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>数组方法</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">isEmpty</span><br><span class="line">count</span><br><span class="line">append(<span class="keyword">_</span>:)</span><br><span class="line">remove(at:)</span><br><span class="line">insert(<span class="keyword">_</span>:at:)</span><br></pre></td></tr></table></figure>
+
+<p>修改某个范围的值<br><code>shoppingList[4...6] = [&quot;Bananas&quot;, &quot;Apples&quot;]</code></p>
+<p>遍历数组</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> shoppingList &#123;</span><br><span class="line">    <span class="built_in">print</span>(value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> <span class="number">0</span><span class="operator">..&lt;</span>shoppingList.count &#123;</span><br><span class="line">    <span class="keyword">let</span> value <span class="operator">=</span> shoppingList[index]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;index: <span class="subst">\(index)</span>, value: <span class="subst">\(value)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// enumerated 方法返回元组</span></span><br><span class="line"><span class="keyword">for</span> (index, value) <span class="keyword">in</span> shoppingList.enumerated() &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;index: <span class="subst">\(index)</span>, value: <span class="subst">\(value)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="合集"><a href="#合集" class="headerlink" title="合集"></a>合集</h4><p>合集将不重复的值，无序存放<br>Set<Element></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num: <span class="type">Set</span>&lt;<span class="type">Int</span>&gt; <span class="operator">=</span> [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>合集方法</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">isEmpty</span><br><span class="line">contains(<span class="keyword">_</span>:)</span><br><span class="line">insert(<span class="keyword">_</span>:)</span><br><span class="line">remove(<span class="keyword">_</span>:)</span><br><span class="line">removeAll()</span><br></pre></td></tr></table></figure>
+
+<p>遍历合集<br>合集是无序的，遍历前使用 sorted 可以排序</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> num.sorted() &#123;</span><br><span class="line">    <span class="built_in">print</span>(value) <span class="comment">// 1,2,3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> num.sorted(by: <span class="operator">&gt;</span>) &#123;</span><br><span class="line">    <span class="built_in">print</span>(value) <span class="comment">// 3,2,1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>合集操作<br><img data-src="https://xiawei.cc/images/20181225-set-venn-diagram.png" alt="setVennDiagram_2x-1"><br>intersection、symmetricDifference、union、subtracting</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>函数里可以传递函数作为参数，先声明一个接受函数作为参数的函数</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calculator</span>(<span class="params">n1</span>: <span class="type">Int</span>, <span class="params">n2</span>: <span class="type">Int</span>, <span class="params">operation</span>: (<span class="type">Int</span>, <span class="type">Int</span>)-&gt;<span class="type">Int</span>)</span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> operation(n1, n2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用声明函数的方式来调用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span> (<span class="params">num1</span>: <span class="type">Int</span>, <span class="params">num2</span>: <span class="type">Int</span>)</span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 <span class="operator">+</span> num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>, operation: add)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用闭包的方式来调用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>, operation: &#123;(num1: <span class="type">Int</span>, num2: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> num1 <span class="operator">+</span> num2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>由于 swift 可以类型推断，而且 calculator 函数里声明过类型，可以去掉类型，简化为</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>, operation: &#123;(num1, num2) <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> num1 <span class="operator">+</span> num2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>由于只有一行代码 return xxx，可以去掉 return 简化为</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>, operation: &#123;(num1, num2) <span class="keyword">in</span> num1 <span class="operator">+</span> num2&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>闭包中，编译器会将参数标识为0、1、2，…，其中0代表第一个参数值，以此类推</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>, operation: &#123; <span class="variable">$0</span> <span class="operator">+</span> <span class="variable">$1</span> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>甚至可以进一步简化，如果函数的最后一个参数是闭包，则可以先删除operation参数名称，再将闭包代码移到函数右边小括号的外面</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calculator(n1: <span class="number">1</span>, n2: <span class="number">2</span>) &#123; <span class="variable">$0</span> <span class="operator">+</span> <span class="variable">$1</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>又例如把数组的每项值加一</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array <span class="operator">=</span> [<span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">23</span>, <span class="number">54</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addOne</span> (<span class="params">n1</span>: <span class="type">Int</span>)</span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> n1 <span class="operator">+</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">array.map(addOne)</span><br></pre></td></tr></table></figure>
+
+<p>使用闭包可以简化为</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map &#123;<span class="variable">$0</span> <span class="operator">+</span> <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="ChangeLog"><a href="#ChangeLog" class="headerlink" title="ChangeLog"></a>ChangeLog</h3><p>20190129 添加错误捕获<br>20190213 添加闭包</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/art/2018/20180729-svg/" rel="prev" title="SVG 的使用">
+                  <i class="fa fa-chevron-left"></i> SVG 的使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2018/20181227-normalizr/" rel="next" title="Normalizr 使用教程">
+                  Normalizr 使用教程 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>

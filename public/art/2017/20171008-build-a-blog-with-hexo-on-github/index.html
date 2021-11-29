@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#222">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="google-site-verification" content="9lVTYe9nsKJtVXVkN82SOQZNTMeUEaJZfLxX-7YgSn4">
+  <meta name="baidu-site-verification" content="code-FzNCoWOKzS">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiawei.cc","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="作为一个 web 程序员，当然也想有自己的自留地于是就研究起了搭建博客，来记录自己的成长了解之后，发现 github + hexo 是个门槛很低的，效果很好的方式hexo 基于 markdown，意味着不需要关心文章排版，也不需要学习编程github 提供了免费空间、域名以及代码管理的工具，解决了服务器问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客搭建、进阶配置指南">
+<meta property="og:url" content="https://xiawei.cc/art/2017/20171008-build-a-blog-with-hexo-on-github/index.html">
+<meta property="og:site_name" content="Xiawei">
+<meta property="og:description" content="作为一个 web 程序员，当然也想有自己的自留地于是就研究起了搭建博客，来记录自己的成长了解之后，发现 github + hexo 是个门槛很低的，效果很好的方式hexo 基于 markdown，意味着不需要关心文章排版，也不需要学习编程github 提供了免费空间、域名以及代码管理的工具，解决了服务器问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiawei.cc/images/20171008.jpg">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-download-chrome.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-chrome-translate.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-git-bush-here.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-create-ssh-key.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-github-setting.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-copy-ssh-key.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-github-paste-ssh-keys.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-github-add-ssh-key-ok.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-atom-md-view.png">
+<meta property="og:image" content="https://xiawei.cc/images/20171008-netstore.png">
+<meta property="article:published_time" content="2017-10-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-02T16:00:00.000Z">
+<meta property="article:author" content="夏味">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiawei.cc/images/20171008.jpg">
+
+
+<link rel="canonical" href="https://xiawei.cc/art/2017/20171008-build-a-blog-with-hexo-on-github/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiawei.cc/art/2017/20171008-build-a-blog-with-hexo-on-github/","path":"art/2017/20171008-build-a-blog-with-hexo-on-github/","title":"Hexo 博客搭建、进阶配置指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo 博客搭建、进阶配置指南 | Xiawei</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Xiawei" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Xiawei</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏味的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tech"><a href="/categories/%E6%8A%80%E6%9C%AF" rel="section"><i class="fa fa-cubes fa-fw"></i>技术</a></li>
+        <li class="menu-item menu-item-read"><a href="/categories/%E8%AF%BB%E4%B9%A6" rel="section"><i class="fa fa-book fa-fw"></i>读书</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">1. 准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AE%89%E8%A3%85-chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%8C%E7%99%BE%E5%BA%A6%E4%B8%8B%E8%BD%BD%E5%8D%B3%E5%8F%AF"><span class="nav-text">1.1 安装 chrome 浏览器，百度下载即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%B3%A8%E5%86%8C%E4%B8%80%E4%B8%AA-Github-%E8%B4%A6%E5%8F%B7"><span class="nav-text">1.2 注册一个 Github 账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AARepo"><span class="nav-text">1.3 创建一个Repo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85%E5%A5%BD-git-%E5%92%8C-npm"><span class="nav-text">1.4 本地安装好 git 和 npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E5%AE%89%E8%A3%85%E5%A5%BD-Atom"><span class="nav-text">1.5 安装好 Atom</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9"><span class="nav-text">2. 本地搭建站点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%AE%89%E8%A3%85-hexo"><span class="nav-text">2.1 安装 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BD%A0%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%AB%99%E7%82%B9"><span class="nav-text">2.2 初始化你的本地站点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%9C%AC%E5%9C%B0%E7%AB%99%E7%82%B9%E5%8F%91%E5%B8%83%E5%88%B0-Github-%E4%B8%8A"><span class="nav-text">3. 本地站点发布到 Github 上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E4%BF%AE%E6%94%B9-hexo-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">3.1 修改 hexo 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-github-%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAssh-key%E9%85%8D%E7%BD%AE"><span class="nav-text">3.2 github 生成一个ssh-key配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E5%B0%86ssh-key%E6%B7%BB%E5%8A%A0%E5%88%B0-Github"><span class="nav-text">3.3 将ssh-key添加到 Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8"><span class="nav-text">4. 日常使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%A4%87%E4%BB%BD%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81-%E5%92%8C-%E6%95%B0%E6%8D%AE"><span class="nav-text">5. 备份本地代码 和 数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%9D%9A%E6%9E%9C%E4%BA%91%E5%A4%87%E4%BB%BD"><span class="nav-text">5.1 坚果云备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-Github-%E5%A4%87%E4%BB%BD"><span class="nav-text">5.2 Github 备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E8%BF%9B%E9%98%B6%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-text">6. 进阶优化配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="nav-text">6.1 版本控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2"><span class="nav-text">6.2 主题更换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8C%BA"><span class="nav-text">6.3 文章末尾添加评论区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%E7%9B%AE%E5%BD%95%E5%BA%8F%E5%8F%B7"><span class="nav-text">6.4 目录序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8"><span class="nav-text">6.5 图片引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-6-%E7%BB%9F%E8%AE%A1"><span class="nav-text">6.6 统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-7-%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F"><span class="nav-text">6.7 修改样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-8-%E6%98%BE%E7%A4%BA%E6%9B%B4%E6%96%B0%E6%97%A5%E6%9C%9F"><span class="nav-text">6.8 显示更新日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-9-%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%E3%80%81%E6%88%96%E8%80%85%E5%85%B6%E4%BB%96%E6%96%87%E5%AD%97"><span class="nav-text">6.9 底部添加备案信息、或者其他文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-10-%E8%AE%BE%E7%BD%AE%E6%90%9C%E7%B4%A2%E6%9C%8D%E5%8A%A1"><span class="nav-text">6.10 设置搜索服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-11-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E3%80%81%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="nav-text">6.11 添加分类、标签页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-12-%E8%AE%BE%E7%BD%AE%E6%BB%9A%E5%8A%A8"><span class="nav-text">6.12 设置滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-13-%E8%AE%BE%E7%BD%AE-RSS-%E8%AE%A2%E9%98%85%E6%BA%90"><span class="nav-text">6.13 设置 RSS 订阅源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E7%95%8C%E9%9D%A2%E7%BE%8E%E5%8C%96"><span class="nav-text">7. 界面美化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%8F%B3%E4%B8%8B%E8%A7%92-live2d-%E5%B0%8F%E4%BA%BA"><span class="nav-text">7.1 右下角 live2d 小人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%AB%99%E9%A1%B6%E9%83%A8%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E3%80%81%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98%E5%AD%97%E8%89%B2"><span class="nav-text">7.2 配置网站顶部背景颜色、二级标题字色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-%E5%85%B6%E4%BB%96"><span class="nav-text">7.3 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%AB%98%E7%BA%A7%E8%AE%BE%E5%AE%9A"><span class="nav-text">8.高级设定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-next-%E4%B8%BB%E9%A2%98%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E6%88%96%E5%9B%9E%E6%BB%9A"><span class="nav-text">8.1 next 主题版本更新或回滚</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="夏味"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">夏味</p>
+  <div class="site-description" itemprop="description">夏味的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiaweiss" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiaweiss" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaweiss@foxmail.com" title="E-Mail → mailto:xiaweiss@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/images/wechat.jpg" title="WeChat → &#x2F;images&#x2F;wechat.jpg"><i class="fab fa-weixin fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiawei.cc/art/2017/20171008-build-a-blog-with-hexo-on-github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="夏味">
+      <meta itemprop="description" content="夏味的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xiawei">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 博客搭建、进阶配置指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2018-12-03 00:00:00" itemprop="dateModified" datetime="2018-12-03T00:00:00+08:00">2018-12-03</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="https://xiawei.cc/images/20171008.jpg"></p>
+<blockquote>
+<p>作为一个 web 程序员，当然也想有自己的自留地<br>于是就研究起了搭建博客，来记录自己的成长<br>了解之后，发现 github + hexo 是个门槛很低的，效果很好的方式<br>hexo 基于 markdown，意味着不需要关心文章排版，也不需要学习编程<br>github 提供了免费空间、域名以及代码管理的工具，解决了服务器问题</p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>2018-12-03 更新 章节 6.13 设置 RSS 订阅源</p>
+</blockquote>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="1-1-安装-chrome-浏览器，百度下载即可"><a href="#1-1-安装-chrome-浏览器，百度下载即可" class="headerlink" title="1.1 安装 chrome 浏览器，百度下载即可"></a>1.1 安装 chrome 浏览器，百度下载即可</h3><p><img data-src="https://xiawei.cc/images/20171008-download-chrome.png"></p>
+<h3 id="1-2-注册一个-Github-账号"><a href="#1-2-注册一个-Github-账号" class="headerlink" title="1.2 注册一个 Github 账号"></a>1.2 注册一个 <a target="_blank" rel="noopener" href="https://github.com/join?source=header-home">Github</a> 账号</h3><p>如果看不懂英语，可以点这个小按钮来全文翻译（失败的话可以多试几次，或使用其他翻译软件）</p>
+<p><img data-src="https://xiawei.cc/images/20171008-chrome-translate.png"></p>
+<h3 id="1-3-创建一个Repo"><a href="#1-3-创建一个Repo" class="headerlink" title="1.3 创建一个Repo"></a>1.3 创建一个Repo</h3><p>登录 Github（初次注册后会自动登录），点击右上角”+”，再点第一行 “新存储库”(New repository)</p>
+<p>第一次要求验证邮箱，邮箱里会收到 Github 发来的邮件，点那个最长的链接就ok</p>
+<p>存储库名称格式为 yourname.github.io。比如，我个人的 Github 账户用户名是 xiaweiss，所以，我的这个 Repo 的名称就是 xiaweiss.github.io</p>
+<h3 id="1-4-本地安装好-git-和-npm"><a href="#1-4-本地安装好-git-和-npm" class="headerlink" title="1.4 本地安装好 git 和 npm"></a>1.4 本地安装好 git 和 npm</h3><p>下载自己系统对应的安装包，安装<br>windows 下载第一行的 msi 类型即可，位数按系统的位数即可，一般选64-bit</p>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git下载地址</a> | <a target="_blank" rel="noopener" href="https://nodejs.org/en/download">node下载地址</a></p>
+<p>安装过程中，不用选择，一直点 next下一步即可<br>安装好之后，运行其他系统运行 terminal 命令行工具<br>windows 系统，在桌面或任意文件夹内，右击，运行 git bush here</p>
+<p><img data-src="https://xiawei.cc/images/20171008-git-bush-here.png"></p>
+<p>(下文的命令行中的命令，每行代表一个命令，行末必须按回车键Enter)</p>
+<p>在命令行中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git --version 回车键Enter</span><br><span class="line">npm --version 回车键Enter</span><br></pre></td></tr></table></figure>
+<p>如果看到版本号，则成功。否则重新安装</p>
+<h3 id="1-5-安装好-Atom"><a href="#1-5-安装好-Atom" class="headerlink" title="1.5 安装好 Atom"></a>1.5 安装好 Atom</h3><p>进入 <a target="_blank" rel="noopener" href="https://atom.io/">atom编辑器 官网</a>，下载安装它</p>
+<p>启动 Atom 之后, 点击 Packages 安装插件</p>
+<p>请搜索并安装以下 markdown 插件</p>
+<p>markdown-writer<br>tool-bar<br>tool-bar-markdown-writer<br>markdown-scroll-sync<br>markdown-pdf</p>
+<p>或者也可以使用其他你喜欢的 markdown 文件编辑工具</p>
+<h2 id="2-本地搭建站点"><a href="#2-本地搭建站点" class="headerlink" title="2. 本地搭建站点"></a>2. 本地搭建站点</h2><h3 id="2-1-安装-hexo"><a href="#2-1-安装-hexo" class="headerlink" title="2.1 安装 hexo"></a>2.1 安装 hexo</h3><p>在命令行中继续输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo -g</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-初始化你的本地站点"><a href="#2-2-初始化你的本地站点" class="headerlink" title="2.2 初始化你的本地站点"></a>2.2 初始化你的本地站点</h3><p>去 Github 把你的 Repo 的 git 地址拷贝出来。<br>我的是 <a target="_blank" rel="noopener" href="https://github.com/xiaweiss/xiaweiss.github.io.git">https://github.com/xiaweiss/xiaweiss.github.io.git</a><br>你的是 <a target="_blank" rel="noopener" href="https://github.com/yourname/yourname.github.io.git">https://github.com/yourname/yourname.github.io.git</a> （其中，yourname 应该换乘你的 Github 用户名）</p>
+<p>然后在 Terminal 面板里输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Public  (windows中 cd /d)</span><br><span class="line">hexo init yourname.github.io</span><br><span class="line">cd yourname.github.io</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>这些完成之后，你就可以打开浏览器，在地址栏里输入： <code>localhost:4000</code>，在本地先看看网站是什么样子了。</p>
+<h2 id="3-本地站点发布到-Github-上"><a href="#3-本地站点发布到-Github-上" class="headerlink" title="3. 本地站点发布到 Github 上"></a>3. 本地站点发布到 Github 上</h2><h3 id="3-1-修改-hexo-配置文件"><a href="#3-1-修改-hexo-配置文件" class="headerlink" title="3.1 修改 hexo 配置文件"></a>3.1 修改 hexo 配置文件</h3><p>关闭命令行，重新打开一个命令行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">atom . （注意符号点前面有空格）</span><br></pre></td></tr></table></figure>
+<p>在 Atom 的左侧面板中，选择 _config.yml 文件，找到 deploy 那一部分（末尾的79行）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:</span><br><span class="line">  (空行)</span><br></pre></td></tr></table></figure>
+<p>改成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
+<p>Ctrl+S 保存</p>
+<h3 id="3-2-github-生成一个ssh-key配置"><a href="#3-2-github-生成一个ssh-key配置" class="headerlink" title="3.2 github 生成一个ssh-key配置"></a>3.2 github 生成一个ssh-key配置</h3><p><a target="_blank" rel="noopener" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a><br>打开命令行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;your_email@example.com&quot;</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; (替换为你的GitHub电子邮件地址)</span><br></pre></td></tr></table></figure>
+<p>接着会出现几次提示，如下图箭头处，直接按回车Enter键即可<br><img data-src="https://xiawei.cc/images/20171008-create-ssh-key.png"></p>
+<h3 id="3-3-将ssh-key添加到-Github"><a href="#3-3-将ssh-key添加到-Github" class="headerlink" title="3.3 将ssh-key添加到 Github"></a>3.3 将ssh-key添加到 Github</h3><p>打开Github，点击右上角的头像，再点设置</p>
+<p><img data-src="https://xiawei.cc/images/20171008-github-setting.png"></p>
+<p>命令行中继续输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>然后可以看到一堆编码，见下图，把红框里的部分复制了。<br><img data-src="https://xiawei.cc/images/20171008-copy-ssh-key.png"></p>
+<p>在用户设置侧栏中，单击 SSH and GPG Keys(SSH和GPG密钥)，然后单击右上角绿色的 New SSH key(新的SSH密钥)</p>
+<p>然后可以看到这个界面，Title标题随意填。key密钥里，把刚刚复制好的编码粘贴进去，然后点下面 Add SSH key<br><img data-src="https://xiawei.cc/images/20171008-github-paste-ssh-keys.png"></p>
+<p>出现这个界面，表示成功了<br><img data-src="https://xiawei.cc/images/20171008-github-add-ssh-key-ok.png"></p>
+<p>最后一步，命令行中输入，就可以发布到 Github 了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>打开 <a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a> 就可以看到博客了</p>
+<h2 id="4-日常使用"><a href="#4-日常使用" class="headerlink" title="4. 日常使用"></a>4. 日常使用</h2><p>打开命令行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">atom .</span><br></pre></td></tr></table></figure>
+<p>即可启动编辑器，并且打开项目目录</p>
+<p><img data-src="https://xiawei.cc/images/20171008-atom-md-view.png"></p>
+<p>使用 md 后缀的 markdown 格式，来写文章。语法请参考 <a target="_blank" rel="noopener" href="http://www.jianshu.com/p/q81RER">《献给写作者的 Markdown 新手指南》</a></p>
+<p>使用 atom 编辑器来 编辑md文件,打开md文件时 ctrl+shift+m 即可看到预览区域</p>
+<p>_draft 文件夹用来存没写完的草稿<br>_posts 文件夹用来存要发布出去的文章<br>_images 文件夹用来存文章中的图片</p>
+<p>以上文件夹下，直接放文章，不要放子文件夹<br>文件名命名格式推荐 20171008-file-name.md<br>文件名不要使用中文，中文不利于检索文件名</p>
+<p>文章顶部 按模板的语法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">date: 2017-10-08</span><br><span class="line">tags: 标签</span><br><span class="line">category: 分类</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>其中 date 是发布日期注意不要使用模板的 <code>&#123; date &#125;</code>写法，这种写法一旦标题改变或者数据文件 db.json 或 /public 丢失，发布日期会改变</p>
+<p>多个标签或分类时，这样写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签1</span><br><span class="line">- 标签2</span><br></pre></td></tr></table></figure>
+
+<p>图片 可以用 <code>![](/images/20171008-image-name.png)</code>语法来引入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt; 表示预览区的分界线，主页面只会显示它之前的内容。</span><br></pre></td></tr></table></figure>
+
+
+<p>写完文章后，本地网站查看效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>发布到 Github</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-备份本地代码-和-数据"><a href="#5-备份本地代码-和-数据" class="headerlink" title="5. 备份本地代码 和 数据"></a>5. 备份本地代码 和 数据</h2><h3 id="5-1-坚果云备份"><a href="#5-1-坚果云备份" class="headerlink" title="5.1 坚果云备份"></a>5.1 坚果云备份</h3><p>由于Github是开源的，备份到Github，别人容易下载拿走，考虑到私密性，推荐使用 <a target="_blank" rel="noopener" href="https://www.jianguoyun.com/">坚果云</a> 来自动备份</p>
+<p>找到 yourname.github.io 文件夹右击，选择<code>坚果云</code>，选择<code>同步到个人空间</code>，即可</p>
+<p><img data-src="https://xiawei.cc/images/20171008-netstore.png"></p>
+<h3 id="5-2-Github-备份"><a href="#5-2-Github-备份" class="headerlink" title="5.2 Github 备份"></a>5.2 Github 备份</h3><p>如果为了不引入其他工具，也可以使用 Github 来备份：</p>
+<p>打开命令行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">git init</span><br><span class="line">git checkout -b source</span><br><span class="line">git add . (注意点前面有空格)</span><br><span class="line">git commit -m &quot;init&quot;</span><br><span class="line">git remote add origin  https://github.com/yourname/yourname.github.io.git</span><br><span class="line">git push -u origin source</span><br></pre></td></tr></table></figure>
+
+<p>每次备份操作，打开命令行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /d/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;本次备份的提示语&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>误删本地文件夹，从备份的代码恢复整个 yourname.github.io 文件夹：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /d</span><br><span class="line">git clone https://github.com/yourname/yourname.github.io.git</span><br><span class="line">git checkout source</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>如果是在新的电脑恢复 整个 yourname.github.io 文件夹，<br>需要先重复步骤1 ~ 步骤2，并且其中以下步骤直接跳过，然后再执行上面命令<br>1.2 注册一个 Github 账号<br>1.3 创建一个Repo<br>2.2 初始化你的本地站点</p>
+<h2 id="6-进阶优化配置"><a href="#6-进阶优化配置" class="headerlink" title="6. 进阶优化配置"></a>6. 进阶优化配置</h2><p>以下部分非新手向，只写要点，按需食用</p>
+<h3 id="6-1-版本控制"><a href="#6-1-版本控制" class="headerlink" title="6.1 版本控制"></a>6.1 版本控制</h3><p>使用 git 来控制版本<br>为方便切换分支，<br>master分支添加 .gitignore 文件<br>master分支、source分支内容统一为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">.idea/</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-主题更换"><a href="#6-2-主题更换" class="headerlink" title="6.2 主题更换"></a>6.2 主题更换</h3><p>使用 <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> 主题为例，<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">详细中文文档</a></p>
+<p>注意当一个repo包含其他repo时，使用命令  <code>git submodule add</code> 来安装并且分开管理，而不是 <code>git clone</code>，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>至于主题配置文件，可以保存一份副本到 themes 文件夹里提交到自己的仓库</p>
+<p>注意切换主题后，如果显示不正常，运行 <code>hexo clean</code> 来清理数据<br>特别注意<code>hexo clean</code>同时会清除掉历史文章的发布日期，慎用！</p>
+<p>clone 含有子repo 的项目后，子 repo 目录内没有内容，还需要执行下面两个命令来 clone 子repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git submodule init</span><br><span class="line">git submodule update</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-文章末尾添加评论区"><a href="#6-3-文章末尾添加评论区" class="headerlink" title="6.3 文章末尾添加评论区"></a>6.3 文章末尾添加评论区</h3><p>目前由于国内审核机制，国内服务说不定哪天就关闭了。所以推荐国外的服务，比较稳定。使用国外的服务，需要代理上网访问国外，没有的用户则不显示评论区。</p>
+<p><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/d68de067ea74">添加Disqus评论</a></p>
+<h3 id="6-4-目录序号"><a href="#6-4-目录序号" class="headerlink" title="6.4 目录序号"></a>6.4 目录序号</h3><p>主题会自动给文章的标题和子标题生成目录，并且加上序号<br>如果要自己写序号，不需要主题自带序号，修改主题配置文件 _config.yml 里的 toc 后面的 member 配置为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">156行 number: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-5-图片引用"><a href="#6-5-图片引用" class="headerlink" title="6.5 图片引用"></a>6.5 图片引用</h3><p>推荐不使用图床，直接把统一图片存在本地文件夹</p>
+<p>目前不支持 atom markdown预览 和 本地网站里同时正常预览图片</p>
+<p>建议编辑时使用 <code>![](../images/xxx.png)</code></p>
+<p>发布时用atom ctrl+f 统一把 <code>../</code> 替换为 <code>/</code> 即可</p>
+<h3 id="6-6-统计"><a href="#6-6-统计" class="headerlink" title="6.6 统计"></a>6.6 统计</h3><p>阅读量统计可以使用 LeanCloud 计数，注意主题配置文件里有两处 LeanCloud，要配置<code>leancloud_visitors</code></p>
+<p>或者直接使用 不蒜子统计 即可，可同时实现阅读量统计、PV、UV功能。</p>
+<p>个人建议，LeanCloud统计阅读量，不蒜子统计PV、UV</p>
+<p><a target="_blank" rel="noopener" href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html">LeanCloud 配置</a><br><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/third-party-services.html#analytics-busuanzi">不蒜子配置</a></p>
+<h3 id="6-7-修改样式"><a href="#6-7-修改样式" class="headerlink" title="6.7 修改样式"></a>6.7 修改样式</h3><p>next 主题使用 <a target="_blank" rel="noopener" href="http://stylus-lang.com/">stylus</a> 预编译样式语言</p>
+<p>可以在 <code>themes\next\source\css\_custom\custom.styl</code> 文件里写自己的 stylus 样式</p>
+<p>例如：首行缩进，添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p</span><br><span class="line">  text-indent 2em</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-8-显示更新日期"><a href="#6-8-显示更新日期" class="headerlink" title="6.8 显示更新日期"></a>6.8 显示更新日期</h3><p>修改主题配置文件 _config.yml，找到 updated_at,修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updated_at: true</span><br></pre></td></tr></table></figure>
+<p>然后就会显示更新的日期了</p>
+<p>如果需要手动设置，可以在文章的标签里加入 <code>updated</code>，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 使用 Hexo 为自己在 Github 上建一个静态 Blog博客 站点</span><br><span class="line">date: 2017-10-08</span><br><span class="line">updated: 2017-11-11</span><br><span class="line">file-title: &#123;&#123; title &#125;&#125;</span><br><span class="line">tags: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-9-底部添加备案信息、或者其他文字"><a href="#6-9-底部添加备案信息、或者其他文字" class="headerlink" title="6.9 底部添加备案信息、或者其他文字"></a>6.9 底部添加备案信息、或者其他文字</h3><p>在主题配置文件里找到 custom_text 这行，修改一下即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#custom_text: Hosted by &lt;a target=&quot;_blank&quot; href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt;</span><br><span class="line">custom_text: Xiaweiss.com 京ICP备17057895号</span><br></pre></td></tr></table></figure>
+<p>或者在主题配置文件里找到 copyright: 这行,修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># If not defined, will be used `author` from Hexo main config.</span><br><span class="line">copyright: &lt;a href=&quot;http://xiaweiss.com&quot;&gt;Xiaweiss.com&lt;/a&gt; 京ICP备17057895号</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-10-设置搜索服务"><a href="#6-10-设置搜索服务" class="headerlink" title="6.10 设置搜索服务"></a>6.10 设置搜索服务</h3><p>使用免费的 local search<br>npm 安装包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>next 主题配置文件里，修改配置文件<br>top_n_per_article 指正文的搜索结果，显示几条。 -1 代表全部显示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # if auto, trigger search by changing input</span><br><span class="line">  # if manual, trigger search by pressing enter key or search button</span><br><span class="line">  trigger: auto</span><br><span class="line">  # show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-11-添加分类、标签页"><a href="#6-11-添加分类、标签页" class="headerlink" title="6.11 添加分类、标签页"></a>6.11 添加分类、标签页</h3><p>可以按官方文档设置<br><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2">创建分类页面</a><br><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%E4%BA%91%E9%A1%B5%E9%9D%A2">创建标签云页面</a></p>
+<p>但以上设置会导致多出2个文件夹，而且以后不会在里面放其他文件，所以我个人推荐这样设置<br>在 source 目录下:<br>新建 文件 categories.md：里面写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>新建 文件 tags.md：里面写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>然后修改主题配置文件，menu设置里的 categories、tags</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  categories: /categories.html || th</span><br><span class="line">  tags: /tags.html || tags</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-12-设置滚动"><a href="#6-12-设置滚动" class="headerlink" title="6.12 设置滚动"></a>6.12 设置滚动</h3><p>主题配置文件里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scroll_to_more: true</span><br></pre></td></tr></table></figure>
+<p>表示从主页进去文章后，直接自动滚动到文章中 more 标签的位置，可以看到网址里多了#more<br>如果需要去掉，设置为false即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">save_scroll: false</span><br></pre></td></tr></table></figure>
+<p>表示在本地存储阅读的进度（滚动到的位置），刷新或再次打开页面时，可以接着读。<br>建议打开这个功能，设置为true即可</p>
+<h3 id="6-13-设置-RSS-订阅源"><a href="#6-13-设置-RSS-订阅源" class="headerlink" title="6.13 设置 RSS 订阅源"></a>6.13 设置 RSS 订阅源</h3><p>安装依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p>项目配置文件里添加配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># RSS</span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: false</span><br><span class="line">  hub:</span><br><span class="line">  order_by: -updated</span><br></pre></td></tr></table></figure>
+<p>主题配置文件里找到 rss 配置，设置为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
+<p>rss 阅读器推荐使用 <a target="_blank" rel="noopener" href="https://www.inoreader.com/">inoreader</a></p>
+<h2 id="7-界面美化"><a href="#7-界面美化" class="headerlink" title="7. 界面美化"></a>7. 界面美化</h2><h3 id="7-1-右下角-live2d-小人"><a href="#7-1-右下角-live2d-小人" class="headerlink" title="7.1 右下角 live2d 小人"></a>7.1 右下角 live2d 小人</h3><p>中文文档 <a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md">EYHN/hexo-helper-live2d</a></p>
+<p>下面是我目前旧版2.1.5的使用方式，最新版请参考hexo-helper-live2d 中文文档</p>
+<p>旧版配置方式：</p>
+<p>安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd yourname.github.io</span><br><span class="line">npm install hexo-helper-live2d@2.1.5</span><br></pre></td></tr></table></figure>
+
+<p>在 yourname.github.io 的 hexo 配置文件 <code>_config.yml</code> 里添加配置项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https://github.com/EYHN/hexo-helper-live2d</span><br><span class="line">live2d:</span><br><span class="line">  model: koharu # 模型名称 默认值: z16</span><br><span class="line">  width: 150 # 宽度 默认值: 150</span><br><span class="line">  height: 300 # 高度 默认值: 300</span><br><span class="line">  scaling: 1 # 分辨率缩放倍率 默认值: 2</span><br><span class="line">  opacityDefault: 1 # 初始的透明度 默认值: 1</span><br><span class="line">  #opacityHover: 1 # 鼠标悬浮时的透明度 默认值: 1</span><br><span class="line">  mobileShow: true # 是否在移动设备上显示 默认值: true</span><br><span class="line">  mobileScaling: 0.5 # 移动设备缩放倍率 默认值: 0.5</span><br><span class="line">  position: right # 模型左右侧放置位置 默认值: right</span><br><span class="line">  horizontalOffset: 0 # 元素的水平偏移 默认值: 0</span><br><span class="line">  verticalOffset: -20 # 元素的底部偏移 默认值: -20</span><br><span class="line">  className: live2d # 元素的类名 默认值: live2d</span><br><span class="line">  id: live2dcanvas # 元素的id 默认值: live2dcanvas</span><br></pre></td></tr></table></figure>
+<p>我自己使用的是 koharu，如果需要其他的，改为相应的名字即可<br>旧版所有小人请看作者大大博客 <a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">hexo live2d插件 2.0 !</a></p>
+<p>接下来，在 <code>next/layout/_layout.swig</code> 文件里，找到 <code>&lt;/body&gt;</code>,在它前面的行添加代码<br>像这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; live2d() &#125;&#125;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-配置网站顶部背景颜色、二级标题字色"><a href="#7-2-配置网站顶部背景颜色、二级标题字色" class="headerlink" title="7.2 配置网站顶部背景颜色、二级标题字色"></a>7.2 配置网站顶部背景颜色、二级标题字色</h3><p>参照 6.1，添加配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.headband</span><br><span class="line">  background: #0095EE;</span><br><span class="line">.site-meta</span><br><span class="line">  background: #0095EE;</span><br><span class="line">.site-subtitle</span><br><span class="line">  color: white;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-3-其他"><a href="#7-3-其他" class="headerlink" title="7.3 其他"></a>7.3 其他</h3><p>界面的优化需要掌握一定的 css 知识，这里不再赘述<br>可以参考 <a target="_blank" rel="noopener" href="https://qianling.pw/hexo-optimization/">千灵《Hexo 优化汇总》</a><br>以及我博客源码里 themes 文件夹下文件的的相关注释</p>
+<p>概括来说</p>
+<ol>
+<li>修改预设好的值，在 <code>next/source/css/_variables/custom.styl</code> 添加变量即可</li>
+</ol>
+<p>例如 <code>base.styl</code> 可以看到代码 <code>$blue = #0684bd</code><br>要把所有预设好的蓝色改为白色，<code>custom.styl</code> 里添加 <code>$red = #fff</code> 即可</p>
+<ol start="2">
+<li><p>添加或修改 样式，可以在 <code>next/source/css/_custom/custom.styl</code> 写入 css</p>
+</li>
+<li><p>修改首页，添加 js，修改文字符号等，修改 <code>next/layout/_layout.swig</code> 即可<br>文章页请修改 <code>next/layout/_macro/post.swig</code></p>
+</li>
+</ol>
+<h2 id="8-高级设定"><a href="#8-高级设定" class="headerlink" title="8.高级设定"></a>8.高级设定</h2><h3 id="8-1-next-主题版本更新或回滚"><a href="#8-1-next-主题版本更新或回滚" class="headerlink" title="8.1 next 主题版本更新或回滚"></a>8.1 next 主题版本更新或回滚</h3><p>进入 next 目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git fetch</span><br><span class="line">git tag</span><br></pre></td></tr></table></figure>
+<p>即可看到当前可用版本列表，使用下面命令即可切换到指定版本，如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout v5.1.4</span><br></pre></td></tr></table></figure>
+
+<p>切换过程中会有文件冲突<br>可以切换前执行 git stash，切换后执行 git stash pop，然后修改文件即可</p>
+<p>或者使用软链接的方式，把修改的文件放在 next 文件夹外时，只需要修改文件，重新软链接即可</p>
+<p>感谢阅读，最后附上<a target="_blank" rel="noopener" href="https://github.com/xiaweiss/xiaweiss-site">博客源码</a></p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="http://lixiaolai.com/2016/06/22/makecs-build-a-blog-with-hexo-on-github/">李笑来《使用 Hexo 为自己在 Github 上建一个静态 Blog 站点》</a><br><a target="_blank" rel="noopener" href="https://qianling.pw/hexo-optimization/">千灵《Hexo 优化汇总》</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a><br><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">NexT 主题文档</a></p>
+<blockquote>
+<p>图片来源：<a target="_blank" rel="noopener" href="https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=40872946">https://www.pixiv.net/member_illust.php?mode=medium&amp;illust_id=40872946</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/art/2017/20171111-set-environment-of-mac/" rel="next" title="Mac 基本开发环境配置">
+                  Mac 基本开发环境配置 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京 ICP 备 17057895 号-2 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">夏味</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiawei","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+<style>
+#live2dcanvas{
+  position: fixed;
+  left: 0px;
+  bottom: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+</style>
+<canvas id="live2dcanvas" width="150" height="300"></canvas>
+
+<script src="/live2d/device.min.js"></script>
+<script>
+(function(){
+  var loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+  if(typeof(device) != 'undefined' && device.mobile()){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+    document.getElementById("live2dcanvas").style.bottom = '-10px';
+  }
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/koharu.model.json", 0.5);});
+})();
+</script>
+</body>
+</html>
